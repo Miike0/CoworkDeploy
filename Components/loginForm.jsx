@@ -11,6 +11,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { Row,Col } from "react-bootstrap";
+
 
 function loginForm() {
   return (
@@ -18,7 +20,7 @@ function loginForm() {
       <div className="perks">
         <h3 id="perks">Unete a la comunidad</h3>
         <p>
-          Miles de companeros te esperan, recuerda que todo proyecto tiene un
+          Miles de compañeros te esperan, recuerda que todo proyecto tiene un
           futuro
         </p>
 
@@ -40,63 +42,78 @@ function loginForm() {
       <div className="login-form">
         <img
           src={
-            "https://firebasestorage.googleapis.com/v0/b/cowork-9bddd.appspot.com/o/websiteImages%2Fpath179-7.png?alt=media&token=69c2225f-c4dd-47e2-a3f5-32af569311ce"
+            "https://firebasestorage.googleapis.com/v0/b/cowork-9bddd.appspot.com/o/websiteImages%2Fa.png?alt=media&token=cf27f255-4014-48aa-88b1-f2d0ed1a24c1"
           }
-          width={70}
-          height={70}
+          width={250}
           layout="intrinsic"
-          className="login-image"
+          className="login-image mb-3 mt-3"
         />
-        <h1 className="loginTitle">Welcome</h1>
-        <div className="loginInputs">
+
+        <div className='mt-3 '>
           <InputGroup className="mb-3">
-            <InputGroup.Text id="basic-addon1">
-              <AccountCircleIcon />
+            <InputGroup.Text
+              id="basic-addon1"
+              style={{ backgroundColor: "#545454", border: "none" }}
+            >
+              <AccountCircleIcon sx={{ color: "#dddd" }} />
             </InputGroup.Text>
             <Form.Control
-              placeholder="Username"
+              placeholder="Correo electronico"
               aria-label="Username"
               aria-describedby="basic-addon1"
+              className="loginInputs text-light"
+              style={{ backgroundColor: "#545454", border: "none" }}
             />
           </InputGroup>
           <InputGroup className="mb-3">
-            <InputGroup.Text id="basic-addon1">
-              <LockIcon />
+            <InputGroup.Text
+              id="basic-addon1"
+              style={{ backgroundColor: "#545454", border: "none", outlineColor:'none' }}
+            >
+              <LockIcon sx={{ color: "#dddd" }} />
             </InputGroup.Text>
             <Form.Control
-              placeholder="Username"
+              placeholder="Contraseña"
               aria-label="Username"
+              type="password"
+              className="loginInputs text-light"
               aria-describedby="basic-addon1"
+              style={{ backgroundColor: "#545454", border: "none" }}
             />
           </InputGroup>
+        </div>
+
+        <div className="d-flex flex-column">
+          <button
+            variant="contained"
+            className="btn mb-2 btn-dark loginBtn rounded-pill"
+          >
+            {"Ingresar a su cuenta"}
+          </button>
+          <button
+            variant="contained"
+            className="btn mb-2 btn-dark loginBtn rounded-pill"
+            style={{ backgroundColor: "#D49B54" }}
+          >
+            {"Registarse"}
+          </button>
         </div>
         <div className="socialGroupButtons">
           <IconButton aria-label="delete">
             <GoogleIcon
-              className="loginIcons"
+              className="socialIconButtpn"
               fontSize="large"
-              sx={{ color: "darkred" }}
+              sx={{ color: "#4285F4" }}
             />
           </IconButton>
           <IconButton aria-label="delete">
             <FacebookIcon
-              className="loginIcons"
+              className="socialIconButtpn"
               fontSize="large"
-              sx={{ color: "#1877f2" }}
+              sx={{ color: "#4267B2" }}
             />
           </IconButton>
-          <IconButton aria-label="delete" size="small" sx={{ color: "purple" }}>
-            <GitHubIcon className="loginIcons" fontSize="large" />
-          </IconButton>
         </div>
-   
-          <button variant="contained" className="btn mb-2 btn-dark Button signInButton">
-            {"Ingresar a su cuenta"}
-          </button>
-          <button variant="contained" className="btn mb-2 btn-dark Button signInButton">
-            {"Registarse"}
-          </button>
-    
       </div>
     </div>
   );
