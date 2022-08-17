@@ -73,7 +73,7 @@ function loginForm() {
               <LockIcon sx={{ color: "#dddd" }} />
             </InputGroup.Text>
             <Form.Control
-              placeholder="Username"
+              placeholder="Contraseña"
               aria-label="Username"
               type="password"
               className="loginInputs text-light"

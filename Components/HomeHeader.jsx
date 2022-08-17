@@ -23,9 +23,9 @@ function HomeHeader() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              <Nav.Link href="#deets">About me</Nav.Link>
+              <Nav.Link href="#deets">Nosotros</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
-                Source Code
+                Contacto
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
