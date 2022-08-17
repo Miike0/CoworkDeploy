@@ -119,7 +119,6 @@
     flex-direction: column;
   }
 
-
   .backdrop {
     overflow-y: scroll;
     flex: none;
@@ -130,7 +129,6 @@
     align-items: center;
     width: 100%;
     min-width: fit-content;
-    
   }
   .perks {
     width: 100%;
