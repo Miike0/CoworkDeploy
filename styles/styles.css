@@ -1,3 +1,4 @@
+
 /*Clases de Login.js*/
 :root {
   --backgroundGeneral: #212121;
@@ -100,6 +101,7 @@
   height: 100%;
   z-index: 1;
 }
+
 
 .loginBtn {
   padding-left: 50px;
