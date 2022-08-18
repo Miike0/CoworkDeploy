@@ -1,13 +1,43 @@
-
 /*Clases de Login.js*/
 :root {
   --backgroundGeneral: #212121;
   --backgroundcomponents: #2f2f2f;
   --blue: #6e85b2;
+  --borderColor: #dddddd;
   --gold: #d49b54;
   --colorText: #ffffff;
 }
 
+body {
+  background-color: var(--backgroundGeneral);
+}
+/*Estilos Generales*/
+.icon {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.blue-button {
+  border: none;
+  background-color: var(--blue);
+}
+
+.blue-button:hover {
+  border: solid 1px var(--borderColor);
+  background-color: var(--blue);
+  border-color: #dddddd;
+}
+.gold-button {
+  border: none;
+  color: var(--backgroundcomponents);
+  background-color: var(--gold);
+}
+
+.gold-button:hover {
+  border: solid 1px var(--backgroundGeneral);
+  background-color: var(--gold);
+  border-color: #dddddd;
+}
 .backgroundVideo {
   position: fixed;
   filter: blur(5px);
@@ -102,7 +132,6 @@
   z-index: 1;
 }
 
-
 .loginBtn {
   padding-left: 50px;
   padding-right: 50px;
@@ -115,7 +144,133 @@
   filter: grayscale(0);
 }
 
+/*estilos componente navbar*/
+.navigation-Bar {
+  background-color: var(--backgroundcomponents);
+  position: fixed;
+  color: var(--colorText);
+  width: 100vw;
+  height: 7vh;
+  z-index: 15;
+  min-width: 97vw;
+}
+.search-container {
+  width: 38vw;
+}
+
+.searchbar {
+  border: none;
+  color: var(--borderColor);
+  background-color: #545454;
+
+}
+
+.searchbar:focus {
+  background-color: #545454;
+  color: var(--borderColor);
+}
+
+/*Estilos de chatbar*/
+.chatbar {
+  flex-direction: column;
+  width: 3vw;
+  min-width: 4rem;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  z-index: 50;
+  top: 0;
+  background-color: #d49b54;
+}
+.chatbar-top {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-container {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  align-items: center;
+}
+
+.chatbar-bottom {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  z-index: 60;
+}
+
+/*Scroll Style*/
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  background: var(--borderColor);
+}
+
+/*Estilos projectBar*/
+.projectBar-container {
+  color: var(--colorText);
+  display: flex;
+  flex-direction: column;
+  height: 99vh;
+  width: fit-content;
+  position: relative;
+  left: 0.5rem;
+  top: 5.2rem;
+  background-color: var(--backgroundcomponents);
+  border-radius: 5px;
+}
+
+/*Estilos de searchFilters*/
+.searchSettings-container {
+  color: var(--colorText);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  left: -0.5rem;
+  top: 1rem;
+  min-width: 70vw;
+  height: 7vh;
+  background-color: var(--backgroundcomponents);
+  border-radius: 5px;
+
+}
+/*Estilos Dashboard*/
+.dashboard-container {
+  overflow: hidden;
+}
+.card-container {
+  position: relative;
+  top: 2.2rem;
+  width: 70vw;
+  left: -0.5rem;
+  overflow-y: scroll;
+  max-height: 78vh;
+  background-color: var(--backgroundGeneral);
+  border-radius: 5px;
+}
+
+.msa {
+}
 @media (max-width: 768px) {
+  /*Login styles mobile*/
   .socialGroupButtons {
     display: flex;
     flex-direction: column;
@@ -139,5 +294,25 @@
   .login-form {
     margin-top: 1rem;
     width: 100%;
+  }
+  .form-container {
+    display: none;
+  }
+  /*navcomponent styles mobile*/
+  .navigation-Bar {
+    display: flex;
+    flex-direction: row;
+  }
+  /*chatbar styles mobile*/
+  .chatbar {
+    display: none;
+  }
+  /*projectbar styles mobile*/
+  .projectBar-container {
+    display: none;
+  }
+  /*searchFilters styles mobile*/
+  .searchSettings-container {
+    display: none;
   }
 }
