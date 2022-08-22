@@ -9,7 +9,7 @@ export default function ChatBar() {
   const handleShow = () => setShow(true);
 
   return (
-
+    <div className="position-relative">
       <div className="chatbar">
         <div className="chatbar-top cursor-pointer btn border-0">
           <ModeCommentIcon
@@ -113,17 +113,17 @@ export default function ChatBar() {
             onClick={handleShow}
           />
         </div>
-
-        <Offcanvas show={show} onHide={handleClose} placement={"end"}>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
-          </Offcanvas.Body>
-        </Offcanvas>
       </div>
 
+      <Offcanvas show={show} onHide={handleClose} placement={"end"}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          Some text as placeholder. In real life you can have the elements you
+          have chosen. Like, text, images, lists, etc.
+        </Offcanvas.Body>
+      </Offcanvas>
+    </div>
   );
 }

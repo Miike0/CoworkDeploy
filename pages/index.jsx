@@ -4,7 +4,7 @@ import ChatBar from "../Components/ChatBar";
 import ProjectBar from "../Components/ProjectBar";
 import SeachFilters from "../Components/SeachFilters";
 import ProjectCard from "../Components/ProjectCard";
-import Container from "react-bootstrap/Container";
+import DashboardMobileBar from "../Components/DashboardMobileBar";
 import { Row, Col } from "react-bootstrap";
 export default function index() {
   return (
@@ -14,8 +14,9 @@ export default function index() {
 
         <NavBar />
         <ProjectBar />
-        <div className="d-flex flex-column justify-content-center   mx-auto">
+        <div className="d-flex flex-column justify-content-center   mx-auto mt-4">
           <SeachFilters />
+          <DashboardMobileBar/>
           <div className="card-container pe-4">
             <Row>
               <ProjectCard />

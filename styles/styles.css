@@ -227,10 +227,10 @@ body {
   color: var(--colorText);
   display: flex;
   flex-direction: column;
-  height: 99vh;
-  width: fit-content;
+  height: 90vh;
+  width: 22vh;
   position: relative;
-  left: 0.5rem;
+  left:1rem;
   top: 5.2rem;
   background-color: var(--backgroundcomponents);
   border-radius: 5px;
@@ -240,16 +240,19 @@ body {
 .searchSettings-container {
   color: var(--colorText);
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
-  left: -0.5rem;
-  top: 1rem;
-  min-width: 70vw;
+  top: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   height: 7vh;
   background-color: var(--backgroundcomponents);
   border-radius: 5px;
+  width: fit-content;
 
 }
 /*Estilos Dashboard*/
@@ -263,11 +266,14 @@ body {
   left: -0.5rem;
   overflow-y: scroll;
   max-height: 78vh;
+  margin-left: 5rem;
+  margin-right: 7rem;
   background-color: var(--backgroundGeneral);
   border-radius: 5px;
 }
 
-.msa {
+.mobile-dashboard-bar{
+  display: none;
 }
 @media (max-width: 768px) {
   /*Login styles mobile*/
@@ -315,4 +321,30 @@ body {
   .searchSettings-container {
     display: none;
   }
+
+  .card-container{
+    top: 4rem;
+    width: 90%;
+    margin-left: 2.6rem;
+    margin-right: auto;
+    
+  }
+
+  .mobile-dashboard-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 7vh;
+    background-color: var(--backgroundcomponents);
+    border-radius: 5px;
+    position: relative;
+    top: 3rem;
+    z-index: 15;
+    color: var(--colorText);
+  }
+  
 }
