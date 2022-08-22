@@ -1,13 +1,43 @@
-
 /*Clases de Login.js*/
 :root {
   --backgroundGeneral: #212121;
   --backgroundcomponents: #2f2f2f;
   --blue: #6e85b2;
+  --borderColor: #dddddd;
   --gold: #d49b54;
   --colorText: #ffffff;
 }
 
+body {
+  background-color: var(--backgroundGeneral);
+}
+/*Estilos Generales*/
+.icon {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.blue-button {
+  border: none;
+  background-color: var(--blue);
+}
+
+.blue-button:hover {
+  border: solid 1px var(--borderColor);
+  background-color: var(--blue);
+  border-color: #dddddd;
+}
+.gold-button {
+  border: none;
+  color: var(--backgroundcomponents);
+  background-color: var(--gold);
+}
+
+.gold-button:hover {
+  border: solid 1px var(--backgroundGeneral);
+  background-color: var(--gold);
+  border-color: #dddddd;
+}
 .backgroundVideo {
   position: fixed;
   filter: blur(5px);
@@ -102,8 +132,6 @@
   z-index: 1;
 }
 
-
-
 .loginBtn {
   padding-left: 50px;
   padding-right: 50px;
@@ -116,7 +144,139 @@
   filter: grayscale(0);
 }
 
+/*estilos componente navbar*/
+.navigation-Bar {
+  background-color: var(--backgroundcomponents);
+  position: fixed;
+  color: var(--colorText);
+  width: 100vw;
+  height: 7vh;
+  z-index: 15;
+  min-width: 97vw;
+}
+.search-container {
+  width: 38vw;
+}
+
+.searchbar {
+  border: none;
+  color: var(--borderColor);
+  background-color: #545454;
+
+}
+
+.searchbar:focus {
+  background-color: #545454;
+  color: var(--borderColor);
+}
+
+/*Estilos de chatbar*/
+.chatbar {
+  flex-direction: column;
+  width: 3vw;
+  min-width: 4rem;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  z-index: 50;
+  top: 0;
+  background-color: #d49b54;
+}
+.chatbar-top {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-container {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  align-items: center;
+}
+
+.chatbar-bottom {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  z-index: 60;
+}
+
+/*Scroll Style*/
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  background: var(--borderColor);
+}
+
+/*Estilos projectBar*/
+.projectBar-container {
+  color: var(--colorText);
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 22vh;
+  position: relative;
+  left:1rem;
+  top: 5.2rem;
+  background-color: var(--backgroundcomponents);
+  border-radius: 5px;
+}
+
+/*Estilos de searchFilters*/
+.searchSettings-container {
+  color: var(--colorText);
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 7vh;
+  background-color: var(--backgroundcomponents);
+  border-radius: 5px;
+  width: fit-content;
+
+}
+/*Estilos Dashboard*/
+.dashboard-container {
+  overflow: hidden;
+}
+.card-container {
+  position: relative;
+  top: 2.2rem;
+  width: 70vw;
+  left: -0.5rem;
+  overflow-y: scroll;
+  max-height: 78vh;
+  margin-left: 5rem;
+  margin-right: 7rem;
+  background-color: var(--backgroundGeneral);
+  border-radius: 5px;
+}
+
+.mobile-dashboard-bar{
+  display: none;
+}
 @media (max-width: 768px) {
+  /*Login styles mobile*/
   .socialGroupButtons {
     display: flex;
     flex-direction: column;
@@ -141,5 +301,51 @@
     margin-top: 1rem;
     width: 100%;
   }
+  .form-container {
+    display: none;
+  }
+  /*navcomponent styles mobile*/
+  .navigation-Bar {
+    display: flex;
+    flex-direction: row;
+  }
+  /*chatbar styles mobile*/
+  .chatbar {
+    display: none;
+  }
+  /*projectbar styles mobile*/
+  .projectBar-container {
+    display: none;
+  }
+  /*searchFilters styles mobile*/
+  .searchSettings-container {
+    display: none;
+  }
+
+  .card-container{
+    top: 4rem;
+    width: 90%;
+    margin-left: 2.6rem;
+    margin-right: auto;
+    
+  }
+
+  .mobile-dashboard-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 7vh;
+    background-color: var(--backgroundcomponents);
+    border-radius: 5px;
+    position: relative;
+    top: 3rem;
+    z-index: 15;
+    color: var(--colorText);
+  }
+  
 }
 
