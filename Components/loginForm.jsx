@@ -11,8 +11,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import { Row,Col } from "react-bootstrap";
-
+import { Row, Col } from "react-bootstrap";
 
 function loginForm() {
   return (
@@ -26,30 +25,34 @@ function loginForm() {
 
         <ul>
           <li className="perkList">
-            <GroupIcon className="me-4 ms--2" sx={{ fontSize: 50 }} />
-            <h5>Comunidad Amistosa</h5>
+            <div className="d-flex perk-component">
+              <GroupIcon className="me-4 ms--2" sx={{ fontSize: 80 }} />
+              <h5>Comunidad Amistosa</h5>
+            </div>
           </li>
           <li className="perkList">
-            <CheckCircleIcon className="me-4" sx={{ fontSize: 50 }} />
-            <h5>Recomendasiones a tu medida</h5>
+            <div className="d-flex perk-component">
+              <CheckCircleIcon className="me-4" sx={{ fontSize: 80 }} />
+              <h5>Recomendasiones a tu medida</h5>
+            </div>
           </li>
-          <li className="perkList">
-            <LaptopIcon className="me-4" sx={{ fontSize: 50 }} />
-            <h5>Proyectos Inovadores. </h5>
+          <li className="perkList ">
+            <div className="d-flex perk-component">
+              <LaptopIcon className="me-4" sx={{ fontSize: 80 }} />
+              <h5>Proyectos Inovadores. </h5>
+            </div>
           </li>
         </ul>
       </div>
       <div className="login-form">
         <img
-          src={
-            "https://firebasestorage.googleapis.com/v0/b/cowork-9bddd.appspot.com/o/websiteImages%2Fa.png?alt=media&token=cf27f255-4014-48aa-88b1-f2d0ed1a24c1"
-          }
+          src="https://cdn.discordapp.com/attachments/408479278175485952/1026945474051178597/blueLogo.png"
           width={250}
           layout="intrinsic"
           className="login-image mb-3 mt-3"
         />
 
-        <div className='mt-3 '>
+        <div className="mt-3 ">
           <InputGroup className="mb-3">
             <InputGroup.Text
               id="basic-addon1"
@@ -68,7 +71,11 @@ function loginForm() {
           <InputGroup className="mb-3">
             <InputGroup.Text
               id="basic-addon1"
-              style={{ backgroundColor: "#545454", border: "none", outlineColor:'none' }}
+              style={{
+                backgroundColor: "#545454",
+                border: "none",
+                outlineColor: "none",
+              }}
             >
               <LockIcon sx={{ color: "#dddd" }} />
             </InputGroup.Text>
@@ -86,14 +93,13 @@ function loginForm() {
         <div className="d-flex flex-column">
           <button
             variant="contained"
-            className="btn mb-2 btn-dark loginBtn rounded-pill"
+            className="btn mb-2 btn-dark outline-btn loginBtn "
           >
-            {"Ingresar a su cuenta"}
+            {"Ingresar a tu cuenta"}
           </button>
           <button
             variant="contained"
-            className="btn mb-2 btn-dark loginBtn rounded-pill"
-            style={{ backgroundColor: "#D49B54" }}
+            className="btn mb-2 btn-dark filled-btn loginBtn"
           >
             {"Registarse"}
           </button>

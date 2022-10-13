@@ -1,8 +1,8 @@
 /*Clases de Login.js*/
 :root {
   --backgroundGeneral: #212121;
-  --backgroundcomponents: #2f2f2f;
-  --blue: #6e85b2;
+  --backgroundcomponents: #212121;
+  --contrastColor: #4098d3;
   --borderColor: #dddddd;
   --gold: #d49b54;
   --colorText: #ffffff;
@@ -13,31 +13,11 @@ body {
 }
 /*Estilos Generales*/
 .icon {
-  color: var(--blue);
+  color: var(--contrastColor);
   cursor: pointer;
+  margin: 0 0.5rem 0 0.5rem;
 }
 
-.blue-button {
-  border: none;
-  background-color: var(--blue);
-}
-
-.blue-button:hover {
-  border: solid 1px var(--borderColor);
-  background-color: var(--blue);
-  border-color: #dddddd;
-}
-.gold-button {
-  border: none;
-  color: var(--backgroundcomponents);
-  background-color: var(--gold);
-}
-
-.gold-button:hover {
-  border: solid 1px var(--backgroundGeneral);
-  background-color: var(--gold);
-  border-color: #dddddd;
-}
 .backgroundVideo {
   position: fixed;
   filter: blur(5px);
@@ -65,12 +45,7 @@ body {
 }
 
 /*Clases de componente HomeHeader*/
-.navContainer {
-  width: 100%;
-  position: relative;
-  display: block;
-  top: 0;
-}
+
 .mainNav {
   padding-top: 2rem;
   position: relative;
@@ -82,12 +57,30 @@ body {
 }
 
 .brandLogo {
+  width: 5rem;
+
+  height: auto;
+  display: flex;
+}
+.container {
+  width: 100%;
+  padding: 0 5rem 0 5rem;
+  max-width: none;
+}
+.navbarLogo {
   width: 50%;
+}
+.navigation-Bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 /*Clases de Componente LoginForm*/
 
 .login-container {
+  margin-top: -5rem;
   position: relative;
   color: white;
   display: flex;
@@ -99,7 +92,7 @@ body {
 }
 
 .perks {
-  background-color: var(--blue);
+  background-color: var(--contrastColor);
   z-index: 2;
   width: 50%;
   padding: 15% 30px 15% 30px;
@@ -135,7 +128,22 @@ body {
 .loginBtn {
   padding-left: 50px;
   padding-right: 50px;
+  border-radius: 5px;
 }
+.outline-btn {
+  background-color: var(--contrastColor);
+}
+.outline-btn:hover {
+  color: var(--contrastColor);
+  background-color: var(--borderColor);
+}
+
+.filled-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--contrastColor);
+}
+
 .socialIconButtpn {
   filter: grayscale(100);
 }
@@ -144,6 +152,9 @@ body {
   filter: grayscale(0);
 }
 
+.login-image {
+  width: 15rem;
+}
 /*estilos componente navbar*/
 .navigation-Bar {
   background-color: var(--backgroundcomponents);
@@ -162,46 +173,11 @@ body {
   border: none;
   color: var(--borderColor);
   background-color: #545454;
-
 }
 
 .searchbar:focus {
   background-color: #545454;
   color: var(--borderColor);
-}
-
-/*Estilos de chatbar*/
-.chatbar {
-  flex-direction: column;
-  width: 3vw;
-  min-width: 4rem;
-  height: 100vh;
-  position: fixed;
-  right: 0;
-  z-index: 50;
-  top: 0;
-  background-color: #d49b54;
-}
-.chatbar-top {
-  display: flex;
-  justify-content: center;
-}
-
-.contacts-container {
-  height: 85%;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  align-items: center;
-}
-
-.chatbar-bottom {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  z-index: 60;
 }
 
 /*Scroll Style*/
@@ -230,7 +206,7 @@ body {
   height: 90vh;
   width: 22vh;
   position: relative;
-  left:1rem;
+  left: 1rem;
   top: 5.2rem;
   background-color: var(--backgroundcomponents);
   border-radius: 5px;
@@ -240,21 +216,34 @@ body {
 .searchSettings-container {
   color: var(--colorText);
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
-  top: 2.5rem;
-  margin-top: 1rem;
+  top: 3.5rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   height: 7vh;
+  width: 88vw;
   background-color: var(--backgroundcomponents);
-  border-radius: 5px;
-  width: fit-content;
-
 }
+
+.search-form {
+  border-radius: 2px;
+  background-color: var(--backgroundcomponents);
+  border: none;
+  border-bottom: solid var(--borderColor);
+}
+.search-form:focus {
+  color: var(--colorText);
+  box-shadow: none;
+  border-radius: 2px;
+  background-color: var(--backgroundcomponents);
+  border: none;
+  border-bottom: solid var(--contrastColor);
+}
+
 /*Estilos Dashboard*/
 .dashboard-container {
   overflow: hidden;
@@ -262,17 +251,32 @@ body {
 .card-container {
   position: relative;
   top: 2.2rem;
-  width: 70vw;
-  left: -0.5rem;
+  padding: 0 8rem 0 8rem;
   overflow-y: scroll;
   max-height: 78vh;
-  margin-left: 5rem;
-  margin-right: 7rem;
   background-color: var(--backgroundGeneral);
+}
+.card {
   border-radius: 5px;
+  border: none;
+  opacity: 0.9;
+}
+.card-project-img {
+  width: 5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
-.mobile-dashboard-bar{
+.card-header {
+  background-color: var(--contrastColor);
+  color: var(--colorText);
+  border: none;
+}
+.card-body {
+  background-color: var(--contrastColor);
+  color: var(--colorText);
+}
+.mobile-dashboard-bar {
   display: none;
 }
 @media (max-width: 768px) {
@@ -287,6 +291,7 @@ body {
     flex: none;
   }
   .login-container {
+    margin-top: 9rem;
     flex-direction: column-reverse;
     align-self: center;
     align-items: center;
@@ -296,10 +301,21 @@ body {
   .perks {
     width: 100%;
     text-align: center;
+    justify-content: center;
+  }
+  .perkList {
+    display: flex;
+    justify-content: center;
+    padding-left: 1.5rem;
+  }
+  .perk-component {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
   }
   .login-form {
-    margin-top: 1rem;
     width: 100%;
+    top: 0;
   }
   .form-container {
     display: none;
@@ -308,6 +324,10 @@ body {
   .navigation-Bar {
     display: flex;
     flex-direction: row;
+  }
+  .brandLogo {
+    width: 3rem;
+    align-self: center;
   }
   /*chatbar styles mobile*/
   .chatbar {
@@ -322,15 +342,18 @@ body {
     display: none;
   }
 
-  .card-container{
+  .card-container {
     top: 4rem;
     width: 90%;
     margin-left: 2.6rem;
     margin-right: auto;
-    
+  }
+  .wwa {
+    background-color: var(--contrastColor);
+    color: #d49b54;
   }
 
-  .mobile-dashboard-bar{
+  .mobile-dashboard-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -346,6 +369,26 @@ body {
     z-index: 15;
     color: var(--colorText);
   }
-  
-}
+  .mainNav {
+    background-color: #212121;
+  }
 
+  /* Card mobile styles */
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-container {
+    position: relative;
+    top: 3rem;
+    display: flex;
+    width: 80vw;
+    margin-left: auto;
+    padding: 0;
+
+    overflow-x: hidden;
+  }
+
+}

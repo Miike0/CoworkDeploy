@@ -1,53 +1,34 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import SortIcon from "@mui/icons-material/Sort";
-
+import SearchIcon from "@mui/icons-material/Search";
+import Input from "@mui/material/Input";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
+const styles = (theme) => ({
+  notchedOutline: {
+    borderWidth: "1px",
+    borderColor: "yellow !important",
+  },
+});
 function SeachFilters() {
   return (
-    <div className="searchSettings-container">
-      <div className="d-flex flex-row">
-        <h4 className='icon ms-4 me-2'>1000 </h4>
-        <h4 className="me-4">Projectos</h4>
+    <div className="searchSettings-container mx-auto">
+      <div>
+        <div className="d-flex flex-row">
+          <SearchIcon className="icon" sx={{ fontSize: 40 }}/>
+          <input
+            type="text"
+            className="form-control form-input search-form"
+            placeholder="Search..."
+          />
+
+        </div>
       </div>
 
-      <div className="d-flex flex-row me-4">
-        <Dropdown className="me-4  ">
-          <Dropdown.Toggle className="blue-button" id="dropdown-basic">
-            Centro
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">CUCEI</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">CUCEA</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">CUCSH</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">CUCS</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">CUTONALA</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Dropdown className="me-4">
-          <Dropdown.Toggle className="blue-button"  id="dropdown-basic">
-            Preferencias
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Dropdown className="me-4">
-          <Dropdown.Toggle className="blue-button" id="dropdown-basic">
-            Disponibilidad
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <SortIcon className="icon" sx={{ fontSize: 40 }} />
-      </div>
+      <SortIcon className="icon" sx={{ fontSize: 40 }} />
     </div>
   );
 }

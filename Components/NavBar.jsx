@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
+import WorkIcon from "@mui/icons-material/Work";
 import ModeCommentIcon from "@mui/icons-material/ModeComment";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -13,34 +13,26 @@ import Avatar from "@mui/material/Avatar";
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="navigation-Bar">
-      <Container>
+
+         <Navbar collapseOnSelect expand="lg" className="navigation-Bar">
+      <Container >
         <Navbar.Brand href="#home" className="navBrand">
-          <img
-            className="brandLogo"
-            src="https://firebasestorage.googleapis.com/v0/b/cowork-9bddd.appspot.com/o/websiteImages%2Fpath179-7.png?alt=media&token=69c2225f-c4dd-47e2-a3f5-32af569311ce"
+        <img
+            className="navbarLogo"
+            src="https://cdn.discordapp.com/attachments/408479278175485952/1026945474441261187/blueSymbol.png"
             alt=""
           />
         </Navbar.Brand>
 
-        <div className="form-container">
-          <Form className="d-flex search-container">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-lg-2 me-md-0 searchbar"
-              aria-label="Search"
-            />
-          </Form>
-        </div>
+
         <Nav
           className="ms-lg-auto me-lg-4 ms-md-0 me-md-0 my-2 my-lg-0"
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
-          <div className="d-flex flex-row ">
-            <SearchIcon className="d-block d-md-none icon"  sx={{ fontSize: 40 }} />
+          <div className="d-flex flex-row justify-content-around ">
             <HomeIcon className="icon" sx={{ fontSize: 40 }} />
+            <WorkIcon className="icon" sx={{ fontSize: 40 }} />
             <NotificationsIcon className="icon" sx={{ fontSize: 40 }} />
             <ModeCommentIcon className="d-block d-md-none icon"  sx={{ fontSize: 40 }} />
           </div>
@@ -57,6 +49,6 @@ export default function NavBar() {
           </div>
         </Nav>
       </Container>
-    </Navbar>
+    </Navbar> 
   );
 }

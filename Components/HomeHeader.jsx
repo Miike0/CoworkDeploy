@@ -9,11 +9,11 @@ function HomeHeader() {
   return (
     <div className="navContainer">
       <Navbar collapseOnSelect expand="lg" variant="dark" className="mainNav">
-        <Container>
+        <Container className="navContainer">
           <Navbar.Brand href="#home" className="navBrand">
             <img
               className="brandLogo"
-              src="https://firebasestorage.googleapis.com/v0/b/cowork-9bddd.appspot.com/o/websiteImages%2Fpath179-7.png?alt=media&token=69c2225f-c4dd-47e2-a3f5-32af569311ce"
+              src="https://cdn.discordapp.com/attachments/408479278175485952/1026945474441261187/blueSymbol.png"
               alt=""
             />
           </Navbar.Brand>
