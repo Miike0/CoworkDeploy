@@ -46,7 +46,7 @@ function loginForm() {
       </div>
       <div className="login-form">
         <img
-          src="https://cdn.discordapp.com/attachments/408479278175485952/1026945474051178597/blueLogo.png"
+          src="https://firebasestorage.googleapis.com/v0/b/cowork-9bddd.appspot.com/o/websiteImages%2FblueSymbol.png?alt=media&token=bfec1fa5-929b-48f1-b0a9-a142eb230051"
           width={250}
           layout="intrinsic"
           className="login-image mb-3 mt-3"

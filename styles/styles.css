@@ -55,16 +55,19 @@ body {
   background-color: re;
   font-size: 1.2rem;
 }
-
-.brandLogo {
-  width: 5rem;
-
-  height: auto;
+.navContainer{
   display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.brandLogo {
+  width: 25rem;
+  height: auto;
 }
 .container {
   width: 100%;
-  padding: 0 5rem 0 5rem;
+  margin: 0 5rem 0 5rem;
   max-width: none;
 }
 .navbarLogo {
@@ -153,7 +156,7 @@ body {
 }
 
 .login-image {
-  width: 15rem;
+  width: 4rem;
 }
 /*estilos componente navbar*/
 .navigation-Bar {
@@ -281,6 +284,9 @@ body {
 }
 @media (max-width: 768px) {
   /*Login styles mobile*/
+  .navContainer{
+    display: none;
+  }
   .socialGroupButtons {
     display: flex;
     flex-direction: column;
@@ -291,13 +297,15 @@ body {
     flex: none;
   }
   .login-container {
-    margin-top: 9rem;
+    overflow-y: scroll;
+    margin-top: 0rem;
+    height: 100%;
     flex-direction: column-reverse;
-    align-self: center;
-    align-items: center;
+    top: 0;
     width: 100%;
     min-width: fit-content;
   }
+  
   .perks {
     width: 100%;
     text-align: center;

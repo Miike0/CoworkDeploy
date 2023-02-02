@@ -13,20 +13,10 @@ function HomeHeader() {
           <Navbar.Brand href="#home" className="navBrand">
             <img
               className="brandLogo"
-              src="https://cdn.discordapp.com/attachments/408479278175485952/1026945474441261187/blueSymbol.png"
+              src="https://firebasestorage.googleapis.com/v0/b/cowork-9bddd.appspot.com/o/websiteImages%2Fcoworklogo.png?alt=media&token=26364034-e432-4237-8dcd-3db1ca3bff41"
               alt=""
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto"></Nav>
-            <Nav>
-              <Nav.Link href="#deets">Nosotros</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Contacto
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
