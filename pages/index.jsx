@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
-import ProjectBar from "../Components/ProjectBar";
 import SeachFilters from "../Components/SeachFilters";
 import ProjectCard from "../Components/ProjectCard";
 import DashboardMobileBar from "../Components/DashboardMobileBar";
