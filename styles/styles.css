@@ -71,13 +71,7 @@ body {
   max-width: none;
 }
 .navbarLogo {
-  width: 50%;
-}
-.navigation-Bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
+  width: 2.5rem
 }
 
 /*Clases de Componente LoginForm*/
@@ -160,8 +154,13 @@ body {
 }
 /*estilos componente navbar*/
 .navigation-Bar {
-  background-color: var(--backgroundcomponents);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: var(--backgroundGeneral);
   position: fixed;
+  top: 0;
   color: var(--colorText);
   width: 100vw;
   height: 7vh;
@@ -201,19 +200,6 @@ body {
   background: var(--borderColor);
 }
 
-/*Estilos projectBar*/
-.projectBar-container {
-  color: var(--colorText);
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
-  width: 22vh;
-  position: relative;
-  left: 1rem;
-  top: 5.2rem;
-  background-color: var(--backgroundcomponents);
-  border-radius: 5px;
-}
 
 /*Estilos de searchFilters*/
 .searchSettings-container {
@@ -332,19 +318,21 @@ body {
   .navigation-Bar {
     display: flex;
     flex-direction: row;
+    justify-content:flex-start;
   }
   .brandLogo {
     width: 3rem;
     align-self: center;
   }
+  .navBrand{
+    width: 3rem;
+  }
+
   /*chatbar styles mobile*/
   .chatbar {
     display: none;
   }
-  /*projectbar styles mobile*/
-  .projectBar-container {
-    display: none;
-  }
+
   /*searchFilters styles mobile*/
   .searchSettings-container {
     display: none;
