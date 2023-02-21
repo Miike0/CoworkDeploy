@@ -565,6 +565,8 @@ body {
     height: 180px;
   }
   .profile-about-avatar-img {
+    width: 100px;
+    height: 100px;
     position: absolute;
     top: 130px;
     left: 20px;
@@ -580,18 +582,24 @@ body {
   .profile-actions {
     top: 140px;
     left: -60px;
+    display: flex;
   }
   .profile-actions-more-btn {
     width: 20px;
     height: 30px;
+    margin-right: 10px;
   }
   .profile-actions-message-btn {
     width: 80px;
     height: 30px;
+    margin-right: 10px;
+
   }
   .profile-actions-follow-btn {
     width: 100px;
     height: 30px;
+    margin-right: 10px;
+
   }
   /* AboutMe componet */
   .aboutMe-container {
@@ -606,7 +614,7 @@ body {
   /* MyProjectsUP component */
   .myProjects-container {
     width: 300px;
-    margin-left: 20px;
+    margin-left: 40px;
   }
   .myProjects-carousel {
     height: 180px;
