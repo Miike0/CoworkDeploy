@@ -14,8 +14,7 @@ import Avatar from "@mui/material/Avatar";
 export default function NavBar() {
   return (
 
-         <Navbar collapseOnSelect expand="lg" className="navigation-Bar">
-      <Container >
+    <Navbar collapseOnSelect expand="lg" className="navigation-Bar">
         <Navbar.Brand href="#home" className="navBrand">
         <img
             className="navbarLogo"
@@ -34,7 +33,6 @@ export default function NavBar() {
             <HomeIcon className="icon" sx={{ fontSize: 40 }} />
             <WorkIcon className="icon" sx={{ fontSize: 40 }} />
             <NotificationsIcon className="icon" sx={{ fontSize: 40 }} />
-            <ModeCommentIcon className="d-block d-md-none icon"  sx={{ fontSize: 40 }} />
           </div>
         </Nav>
         <Nav>
@@ -48,7 +46,6 @@ export default function NavBar() {
             </h5>
           </div>
         </Nav>
-      </Container>
     </Navbar> 
   );
 }

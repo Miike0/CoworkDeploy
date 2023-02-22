@@ -13,18 +13,21 @@ const styles = (theme) => ({
     borderColor: "yellow !important",
   },
 });
-function SeachFilters() {
+function SeachFilters(props) {
+  const { onSearch } = props;
   return (
     <div className="searchSettings-container mx-auto">
       <div>
         <div className="d-flex flex-row">
-          <SearchIcon className="icon" sx={{ fontSize: 40 }}/>
+          <SearchIcon className="icon" sx={{ fontSize: 40 }} />
           <input
             type="text"
             className="form-control form-input search-form"
             placeholder="Search..."
+            onChange={(e) => {
+              onSearch(e);
+            }}
           />
-
         </div>
       </div>
 
