@@ -268,6 +268,175 @@ body {
 .mobile-dashboard-bar {
   display: none;
 }
+/* Clases de componentes de userProfile */
+.information-container {
+  top: 380px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+}
+.information-container-right {
+  display: flex;
+  flex-direction: column;
+}
+/* Profile component */
+.profile-Container {
+  display: flex;
+}
+.profile-bg-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.profile-data-container {
+  width: auto;
+}
+.profile-about {
+  display: flex;
+  justify-content: space-between;
+
+}
+.profile-about-avatar-img {
+  position: absolute;
+  top: 120px;
+  left: 50px;
+}
+.profile-about-me {
+  position: absolute;
+  left: 220px;
+}
+.profile-about-me-name {
+  font-weight: bold;
+  color: var(--colorText);
+  font-size: 30px;
+  font-weight: bold;
+}
+.profile-about-me-description {
+  color: var(--colorText);
+  font-size: 15px;
+  text-align: justify;
+}
+.profile-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  left: 40px;
+  top: 30px;
+}
+.button {
+  color: var(--colorText);
+  border-color: var(--borderColor);
+}
+.profile-actions-more-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.profile-actions-message-btn {
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+}
+.profile-actions-follow-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--contrastColor);
+}
+/* AboutMe componet */
+.aboutMe-container {
+  width: 400px;
+  height: auto;
+  margin-left: 150px;
+
+}
+.aboutMe-experience {
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+}
+.title {
+  font-size: 20px;
+  color: var(--contrastColor);
+}
+.text {
+  font-size: 15px;
+  color: var(--colorText);
+  text-align: justify;
+  margin-top: 5px;
+}
+.btn-readMore {
+  color: var(--colorText);
+  text-transform: none;
+  font-weight: bold;
+  margin-left: -10px;
+  font-size: 15px;
+}
+.btn-icon {
+  color: var(--contrastColor);
+}
+/* GeneralDataUP component */
+.generalData-container {
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+
+}
+.title {
+  font-size: 20px;
+  color: var(--contrastColor);
+}
+.data {
+  color: var(--colorText);
+  text-align: justify;
+  margin-top: 5px;
+}
+.generalData-skills-chips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.chips-container {
+  max-width: 350px;
+  max-height: 80px ;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.chips-container::-webkit-scrollbar {
+  display: none;
+}
+.chip {
+  color: var(--colorText);
+  margin: 4px;
+}
+.generalData-skills-addButton-icon {
+  color: var(--contrastColor);
+  font-size: 45px;
+}
+/* MyProjectsUP component */
+.myProjects-container {
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+}
+.myProjects-carousel {
+  height: 200px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.carousel-item {
+  height: 200px;
+}
 @media (max-width: 768px) {
   /*Login styles mobile*/
   .navContainer{
