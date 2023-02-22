@@ -556,4 +556,71 @@ body {
     overflow-x: hidden;
   }
 
+  /* Clases de componentes de userProfile */
+  .information-container {
+    flex-direction: column;
+  }
+  /* Profile component */
+  .profile-bg-img {
+    height: 180px;
+  }
+  .profile-about-avatar-img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 130px;
+    left: 20px;
+  }
+  .profile-about-me {
+    position: absolute;
+    left: 20px;
+    top: 230px;
+  }
+  .profile-about-me-name {
+    font-size: 25px;
+  }
+  .profile-actions {
+    top: 140px;
+    left: -60px;
+    display: flex;
+  }
+  .profile-actions-more-btn {
+    width: 20px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  .profile-actions-message-btn {
+    width: 80px;
+    height: 30px;
+    margin-right: 10px;
+
+  }
+  .profile-actions-follow-btn {
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+
+  }
+  /* AboutMe componet */
+  .aboutMe-container {
+    width: 300px;
+    margin-left: 40px;
+  }
+  /* GeneralDataUP component */
+  .generalData-container {
+    width: 300px;
+    margin-left: 40px;
+  }
+  /* MyProjectsUP component */
+  .myProjects-container {
+    width: 300px;
+    margin-left: 40px;
+  }
+  .myProjects-carousel {
+    height: 180px;
+
+  }
+  .carousel-item {
+    height: 180px;
+  }
 }
