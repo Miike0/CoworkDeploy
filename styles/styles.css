@@ -437,6 +437,11 @@ body {
 .carousel-item {
   height: 200px;
 }
+
+/*Project details styles*/
+.projectDetailsimg{
+  width: 3rem;
+}
 @media (max-width: 768px) {
   /*Login styles mobile*/
   .navContainer{

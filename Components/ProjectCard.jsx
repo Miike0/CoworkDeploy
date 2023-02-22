@@ -1,7 +1,11 @@
+import { Button } from "@mui/material";
 import React from "react";
 import { Col } from "react-bootstrap";
+import { useRouter } from 'next/router'
+
 function ProjectCard(props) {
   const { project } = props;
+  const router = useRouter();
   return (
     <Col xl={3} lg={4} md={6} sm={12} className="my-2 card-container2">
       <div className="card">
@@ -18,6 +22,14 @@ function ProjectCard(props) {
               return <img key={`${project}_${member}`} src="https://bootdey.com/img/Content/avatar/avatar3.png" className="rounded-circle mr-1" alt="Avatar" width="28" height="28" />;
             })}
           </div>
+
+        </div>
+        <div>
+          <Button onClick={() => router.push({
+                    pathname: '/ProjectDetails',
+                    query: { name: project.data.name,
+                            image: project.data.image}
+          })} variant="contained" color="success">View Project</Button>
         </div>
       </div>
     </Col>
