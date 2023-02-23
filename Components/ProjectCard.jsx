@@ -7,7 +7,15 @@ function ProjectCard(props) {
   const { project } = props;
   const router = useRouter();
   return (
+
     <Col xl={3} lg={4} md={6} sm={12} className="my-2 card-container2">
+      <a onClick={() => {
+        sessionStorage.setItem('projectID', project.id)
+        router.push({
+          pathname: '/ProjectDetails',
+          query: { id: project.id }
+        })
+      }} variant="contained" color="success">
       <div className="card">
         <div className="card-header px-4 pt-4">
           <img className="card-project-img" src={project.data.image} alt="" />
@@ -25,14 +33,11 @@ function ProjectCard(props) {
 
         </div>
         <div>
-          <Button onClick={() => router.push({
-                    pathname: '/ProjectDetails',
-                    query: { name: project.data.name,
-                            image: project.data.image}
-          })} variant="contained" color="success">View Project</Button>
         </div>
       </div>
-    </Col>
+    </a>
+    </Col >
+
   );
 }
 

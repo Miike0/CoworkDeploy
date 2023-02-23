@@ -3,27 +3,46 @@ import NavBar from '../Components/NavBar'
 import { withRouter } from 'next/router';
 import axios from "axios";
 import { API_URL } from '../Utils/Constants';
+import ProjectDescription from '../Components/ProjectDescription';
+import ProjectTeam from '../Components/ProjectTeam';
+
 
 function ProjectDetails(props) {
   const [project, setProject] = useState();
-
-  const getProject = async () => {
-    await axios.get(API_URL + "project",props.router.query.name).then((res) => setProject(res.data.data));
-    console.log(project);
+  const [loading, isLoading] = useState(true);
+  const getProject = async (id) => {
+    await axios.get(API_URL + "project", { params: { id: id } }).then((res) => setProject(res.data.data));
   };
 
   useEffect(() => {
-    getProject()
+    let key;
+    if (!props.router.query.id)
+      key = sessionStorage.getItem('projectID')
+    else
+      key = props.router.query.id
+    getProject(key)
 
-  }, []);
-  return (
+  }, [loading]);
 
-    <div>
-      <div className='projectBanner d-flex flex-row'>
-      <img className="projectDetailsimg" src={props.router.query.image} alt="" />
+  useEffect(() => {
+    if(project)
+      isLoading(false)
+  }, [project]);
+  return loading ? (
+    <div>Loading...</div>
+  ) :  (
 
-        <h1 className='card-title'>{props.router.query.name}</h1>
-     </div>
+    <div className='d-flex flex-column'>
+      <NavBar/>
+      <div className='projectBanner d-flex flex-column mt-5'>
+        <img className="projectDetailsimg" src={project.image} alt="" />
+        <h2 className='projectTitle'>{project.name}</h2> 
+      </div>
+      <div className='descriptionContainer d-flex flex-row justify-content-evenly'>
+        <ProjectDescription description={project.description}/>
+        <ProjectTeam members={project.members} tags={project.tags} />
+      </div>
+      
     </div>
   )
 }

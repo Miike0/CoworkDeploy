@@ -249,6 +249,7 @@ body {
   border-radius: 5px;
   border: none;
   opacity: 0.9;
+  min-height: 50vh;
 }
 .card-project-img {
   width: 5rem;
@@ -440,7 +441,51 @@ body {
 
 /*Project details styles*/
 .projectDetailsimg{
-  width: 3rem;
+  width: 9rem;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+.projectBanner{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.BlueTitle{
+  color: var(--contrastColor);
+  width: fit-content;
+  border-bottom: 3px solid var(--borderColor) ;
+  line-height: 1.8;
+}
+.projectTitle{
+  color: var(--colorText);
+  width: fit-content;
+
+}
+
+.ProjectDescription{
+  padding-top: 2rem;
+  max-width:50vw;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.userAvatar{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  vertical-align:middle;
+  margin-bottom: 10px;
+
+}
+.avatarName{
+  color: var(--colorText);
+  margin-left: 10px;
+  margin-top:auto;
+  margin-bottom: auto;
 }
 @media (max-width: 768px) {
   /*Login styles mobile*/
