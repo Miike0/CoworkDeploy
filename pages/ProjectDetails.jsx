@@ -5,6 +5,7 @@ import axios from "axios";
 import { API_URL } from '../Utils/Constants';
 import ProjectDescription from '../Components/ProjectDescription';
 import ProjectTeam from '../Components/ProjectTeam';
+import { Button } from 'react-bootstrap';
 
 
 function ProjectDetails(props) {
@@ -14,6 +15,7 @@ function ProjectDetails(props) {
     await axios.get(API_URL + "project", { params: { id: id } }).then((res) => setProject(res.data.data));
   };
 
+  
   useEffect(() => {
     let key;
     if (!props.router.query.id)
@@ -34,11 +36,11 @@ function ProjectDetails(props) {
 
     <div className='d-flex flex-column'>
       <NavBar/>
-      <div className='projectBanner d-flex flex-column mt-5'>
+      <div className='projectBanner d-flex flex-column'>
         <img className="projectDetailsimg" src={project.image} alt="" />
         <h2 className='projectTitle'>{project.name}</h2> 
       </div>
-      <div className='descriptionContainer d-flex flex-row justify-content-evenly'>
+      <div className='descriptionContainer d-flex '>
         <ProjectDescription description={project.description}/>
         <ProjectTeam members={project.members} tags={project.tags} />
       </div>
