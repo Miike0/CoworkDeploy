@@ -33,18 +33,18 @@ function Profile() {
                         <span className="profile-about-me-name">John Doe</span>
                         <p className="profile-about-me-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </Col>
-                    <Col xs={3} className="profile-actions">
-                        <Col md="auto" className="profile-actions-more">
+                    <Col md="auto" className="profile-actions">
+                        <Col md="4" className="profile-actions-more">
                             <Button variant="outlined" className="profile-actions-more-btn button">
                                 <MoreHorizOutlinedIcon fontSize="medium"/>
                             </Button>
                         </Col>
-                        <Col md="auto" className="profile-actions-message">
+                        <Col md="5" className="profile-actions-message">
                             <Button variant="outlined" className="profile-actions-message-btn button">
                                 Mensaje
                             </Button>
                         </Col>
-                        <Col md="auto" className="profile-actions-follow">
+                        <Col md="5" className="profile-actions-follow">
                             <Button variant="contained" startIcon={<AddRoundedIcon/>} className="profile-actions-follow-btn button">
                                 Seguir
                             </Button>
