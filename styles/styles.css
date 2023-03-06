@@ -291,10 +291,11 @@ body {
 }
 /* Clases de componentes de userProfile */
 .information-container {
-  top: 380px;
-  position: absolute;
+  top: 100px;
+  position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 .information-container-right {
   display: flex;
@@ -370,7 +371,7 @@ body {
 .aboutMe-container {
   width: 400px;
   height: auto;
-  margin-left: 150px;
+  /* margin-left: 150px; */
 
 }
 .aboutMe-experience {
@@ -405,7 +406,7 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
-  margin-left: 250px;
+  /* margin-left: 250px; */
 
 }
 .title {
@@ -449,7 +450,6 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
-  margin-left: 250px;
 }
 .myProjects-carousel {
   height: 200px;
@@ -640,6 +640,7 @@ body {
 
   /* Clases de componentes de userProfile */
   .information-container {
+    margin-top: 80px;
     flex-direction: column;
   }
   /* Profile component */
@@ -658,11 +659,14 @@ body {
     left: 20px;
     top: 230px;
   }
+  .profile-about-me-description {
+    overflow-y: hidden;
+  }
   .profile-about-me-name {
     font-size: 25px;
   }
   .profile-actions {
-    top: 140px;
+    top: 150px;
     left: -60px;
     display: flex;
   }
