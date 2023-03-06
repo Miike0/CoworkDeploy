@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 import NavBar from "../Components/NavBar";
 import SeachFilters from "../Components/SeachFilters";
 import ProjectCard from "../Components/ProjectCard";
 import { Row } from "react-bootstrap";
+import { API_URL } from "../Utils/Constants.js";
 
-const API_URL = "https://cowork-api.vercel.app/";
+
 
 export default function index() {
   const [allProjects, setAllProjects] = useState([]);
