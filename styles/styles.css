@@ -6,6 +6,8 @@
   --borderColor: #dddddd;
   --gold: #d49b54;
   --colorText: #ffffff;
+  --colorTextOnWhite: #212121;
+  --backgroundWhite: #ffffff;
 }
 
 body {
@@ -437,6 +439,129 @@ body {
 .carousel-item {
   height: 200px;
 }
+/* Estilos de SkillForm */
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skillForm-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+.skillForm-leftSide {
+  width: 400px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--backgroundWhite);
+}
+.skillForm-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.skillForm-aboutYou {
+  font-size: 36px;
+  color: var(--contrastColor);
+}
+.skillForm-tellUs {
+  font-size: 26px;
+}
+.skillForm-userPhoto {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  position: relative;
+  top: 50px;
+}
+.userPhoto-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit:cover;
+}
+.userPhoto-bttn {
+  position: absolute;
+  bottom: 0;
+  left: 193px;
+  top: -185px;
+  border-radius: 50%;
+}
+.userPhoto-icon {
+  font-size: 40px;
+  color: var(--contrastColor);
+}
+.skillForm-rightSide {
+  width: 600px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.skillForm-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skillForm-welcome {
+  font-size: 35px;
+  color: var(--contrastColor);
+}
+.skillForm-img {
+  width: 280px;
+  height: 80px;
+  object-fit: contain;
+}
+.skillForm-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skillForm-autoComplete{
+  width: 500px;
+  margin: 20px;
+}
+.skillForm-names {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.names {
+  width: 245px;
+}
+.input-large {
+  width: 500px;
+}
+.skillForm-location,
+.skillForm-aboutU {
+  margin: 15px;
+}
+.skillForm-formChips {
+  width: 500px;
+  margin: 20px;
+}
+.skillForm-boxChips {
+  height: 35px;
+  overflow-y: scroll;
+}
+.skillForm-chips {
+  color: var(--colorText);
+  border: solid 1px var(--contrastColor);
+}
+.skillForm-beggins {
+  width: 500px;
+  font-size: 20px;
+}
 @media (max-width: 768px) {
   /*Login styles mobile*/
   .navContainer{
@@ -622,5 +747,9 @@ body {
   }
   .carousel-item {
     height: 180px;
+  }
+  /* Estilos de SkillForm */
+  .skillForm-container {
+    flex-direction: column;
   }
 }
