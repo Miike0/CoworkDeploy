@@ -93,7 +93,22 @@ body {
 .navbarLogo {
   width: 2.5rem
 }
-
+.navbutton{
+  background-color: #212121;
+  border: none;
+}
+.navbutton:hover{
+  background-color: #212121;
+  border: none;
+}
+.navbutton:focus{
+  background-color: #212121;
+  border: none;
+}
+.navbutton:active{
+  background-color: #212121;
+  border: none;
+}
 /*Clases de Componente LoginForm*/
 
 .login-container {
@@ -172,6 +187,18 @@ body {
 .login-image {
   width: 4rem;
 }
+
+.signUpBox{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  padding: 1rem;
+  background-color: var(--backgroundcomponents);
+  color: #4098d3;
+}
+
 /*estilos componente navbar*/
 .navigation-Bar {
   display: flex;

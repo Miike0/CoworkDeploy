@@ -12,8 +12,13 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Row, Col } from "react-bootstrap";
+import JoinModal from "./JoinModal";
+import { loginWithFacebook, loginWithGoogle, signInWhitEmail } from "../Utils/firebase";
+import { useState } from "react";
 
 function loginForm() {
+  const [email, setemail] = useState('');
+  const [password, setpassword] = useState('');
   return (
     <div className="login-container">
       <div className="perks">
@@ -55,12 +60,14 @@ function loginForm() {
         <div className="mt-3 ">
           <InputGroup className="mb-3">
             <InputGroup.Text
+              onChange={(e) => setemail(e.target.value)}
               id="basic-addon1"
               style={{ backgroundColor: "#545454", border: "none" }}
             >
               <AccountCircleIcon sx={{ color: "#dddd" }} />
             </InputGroup.Text>
             <Form.Control
+              onChange={(e) => setemail(e.target.value)}
               placeholder="Correo electronico"
               aria-label="Username"
               aria-describedby="basic-addon1"
@@ -80,6 +87,7 @@ function loginForm() {
               <LockIcon sx={{ color: "#dddd" }} />
             </InputGroup.Text>
             <Form.Control
+              onChange={(e) => setpassword(e.target.value)}
               placeholder="Contraseña"
               aria-label="Username"
               type="password"
@@ -94,25 +102,27 @@ function loginForm() {
           <button
             variant="contained"
             className="btn mb-2 btn-dark outline-btn loginBtn "
+            onClick={() => signInWhitEmail(email, password)}
           >
             {"Ingresar a tu cuenta"}
           </button>
-          <button
+          {/*           <button
             variant="contained"
             className="btn mb-2 btn-dark filled-btn loginBtn"
           >
             {"Registarse"}
-          </button>
+          </button> */}
+          <JoinModal></JoinModal>
         </div>
         <div className="socialGroupButtons">
-          <IconButton aria-label="delete">
+          <IconButton aria-label="delete" onClick={loginWithGoogle}>
             <GoogleIcon
               className="socialIconButtpn"
               fontSize="large"
               sx={{ color: "#4285F4" }}
             />
           </IconButton>
-          <IconButton aria-label="delete">
+          <IconButton aria-label="delete" onClick={loginWithFacebook}>
             <FacebookIcon
               className="socialIconButtpn"
               fontSize="large"
