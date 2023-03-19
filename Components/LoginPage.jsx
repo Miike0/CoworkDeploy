@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import LoginForm from "../Components/loginForm";
-import HomeHeader from "../Components/HomeHeader";
+import LoginForm from "./loginForm";
+import HomeHeader from "./HomeHeader";
 
-function login() {
+export default function LoginPage() {
   return (
     <div>
       <video
@@ -25,4 +25,4 @@ function login() {
 
 
 
-export default login;
+
