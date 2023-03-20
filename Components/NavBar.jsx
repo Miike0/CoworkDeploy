@@ -1,20 +1,18 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import HomeIcon from "@mui/icons-material/Home";
-import WorkIcon from "@mui/icons-material/Work";
-import ModeCommentIcon from "@mui/icons-material/ModeComment";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Avatar from "@mui/material/Avatar";
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+import HomeIcon from '@mui/icons-material/Home';
+import WorkIcon from '@mui/icons-material/Work';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { logOut } from "../Utils/firebase";
+import { logOut } from '../Utils/firebase';
+import { useRouter } from 'next/router';
 
-export default function NavBar({ username, avatar }) {
+export default function NavBar({ user }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -23,8 +21,9 @@ export default function NavBar({ username, avatar }) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  console.log(user);
+  const router = useRouter();
   return (
-
     <Navbar collapseOnSelect expand="lg" className="navigation-Bar">
       <Navbar.Brand href="#home" className="navBrand">
         <img
@@ -34,10 +33,9 @@ export default function NavBar({ username, avatar }) {
         />
       </Navbar.Brand>
 
-
       <Nav
         className="ms-lg-auto me-lg-4 ms-md-0 me-md-0 my-2 my-lg-0"
-        style={{ maxHeight: "100px" }}
+        style={{ maxHeight: '100px' }}
         navbarScroll
       >
         <div className="d-flex flex-row justify-content-around ">
@@ -47,21 +45,16 @@ export default function NavBar({ username, avatar }) {
         </div>
       </Nav>
       <Nav>
-
         <Button
           className="navbutton"
           aria-controls={open ? 'basic-menu' : undefined}
-
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
         >
           <div className="d-flex flex-row align-items-center">
-            <Avatar
-              alt="user img"
-              src={avatar||null}
-            />
+            <Avatar alt="user img" src={user?.avatar || null} />
             <h5 className="d-none d-xl-block ms-xl-2 me-xl-4 mt-2 ">
-              {username || 'Unknow User'}
+              {user?.username || 'Unknow User'}
             </h5>
           </div>
         </Button>
@@ -74,11 +67,20 @@ export default function NavBar({ username, avatar }) {
             'aria-labelledby': 'basic-button',
           }}
         >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
+          <MenuItem
+            onClick={() => {
+              console.log(user);
+              router.push({
+                pathname: '/userProfile',
+                query: { id: user.uid },
+              });
+            }}
+          >
+            Profile
+          </MenuItem>
           <MenuItem onClick={handleClose}>My account</MenuItem>
-          <MenuItem onClick={()=> logOut()}>Logout</MenuItem>
+          <MenuItem onClick={() => logOut()}>Logout</MenuItem>
         </Menu>
-
       </Nav>
     </Navbar>
   );
