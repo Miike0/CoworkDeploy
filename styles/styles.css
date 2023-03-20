@@ -13,6 +13,7 @@
 body {
   background-color: var(--backgroundGeneral);
 }
+
 /*Estilos Generales*/
 .icon {
   color: var(--contrastColor);
@@ -20,26 +21,30 @@ body {
   margin: 0 0.5rem 0 0.5rem;
 }
 
-.primaryButton{
+.primaryButton {
   border: none;
   background-color: var(--contrastColor);
 
 }
-.primaryButton:hover{
+
+.primaryButton:hover {
   border: var(--colorText);
   background-color: var(--contrastColor);
 
 }
-.secondaryButton{
+
+.secondaryButton {
   background-color: var(--backgroundGeneral);
   border-color: var(--contrastColor);
   color: var(--contrastColor);
 }
-.secondaryButton:hover{
+
+.secondaryButton:hover {
   background-color: var(--backgroundGeneral);
   border-color: var(--colorText);
   color: var(--colorText);
 }
+
 .backgroundVideo {
   position: fixed;
   filter: blur(5px);
@@ -54,6 +59,7 @@ body {
   border-color: #ff0000;
   box-shadow: inset 0 0.1px 0.1px rgba(0, 0, 0, 0.075), 0 0 8px var(--colorText);
 }
+
 .backdrop {
   position: absolute;
   display: flex;
@@ -77,40 +83,49 @@ body {
   background-color: re;
   font-size: 1.2rem;
 }
-.navContainer{
+
+.navContainer {
   display: flex;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
 }
+
 .brandLogo {
   width: 25rem;
   height: auto;
 }
+
 .container {
   width: 100%;
   margin: 0 5rem 0 5rem;
   max-width: none;
 }
+
 .navbarLogo {
   width: 2.5rem
 }
-.navbutton{
+
+.navbutton {
   background-color: #212121;
   border: none;
 }
-.navbutton:hover{
+
+.navbutton:hover {
   background-color: #212121;
   border: none;
 }
-.navbutton:focus{
+
+.navbutton:focus {
   background-color: #212121;
   border: none;
 }
-.navbutton:active{
+
+.navbutton:active {
   background-color: #212121;
   border: none;
 }
+
 /*Clases de Componente LoginForm*/
 
 .login-container {
@@ -131,6 +146,7 @@ body {
   width: 50%;
   padding: 15% 30px 15% 30px;
 }
+
 .perkList {
   display: flex;
   width: 100%;
@@ -164,9 +180,11 @@ body {
   padding-right: 50px;
   border-radius: 5px;
 }
+
 .outline-btn {
   background-color: var(--contrastColor);
 }
+
 .outline-btn:hover {
   color: var(--contrastColor);
   background-color: var(--borderColor);
@@ -190,7 +208,7 @@ body {
   width: 4rem;
 }
 
-.signUpBox{
+.signUpBox {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -216,6 +234,7 @@ body {
   z-index: 15;
   min-width: 97vw;
 }
+
 .search-container {
   width: 38vw;
 }
@@ -273,6 +292,7 @@ body {
   border: none;
   border-bottom: solid var(--borderColor);
 }
+
 .search-form:focus {
   color: var(--colorText);
   box-shadow: none;
@@ -286,6 +306,7 @@ body {
 .dashboard-container {
   overflow: hidden;
 }
+
 .card-container {
   position: relative;
   top: 2.2rem;
@@ -294,12 +315,14 @@ body {
   max-height: 78vh;
   background-color: var(--backgroundGeneral);
 }
+
 .card {
   border-radius: 5px;
   border: none;
   opacity: 0.9;
   min-height: 35vh;
 }
+
 .card-project-img {
   width: 5rem;
   border-radius: 5px;
@@ -311,13 +334,16 @@ body {
   color: var(--colorText);
   border: none;
 }
+
 .card-body {
   background-color: var(--contrastColor);
   color: var(--colorText);
 }
+
 .mobile-dashboard-bar {
   display: none;
 }
+
 /* Clases de componentes de userProfile */
 .information-container {
   top: 100px;
@@ -326,47 +352,57 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
 .information-container-right {
   display: flex;
   flex-direction: column;
 }
+
 /* Profile component */
 .profile-Container {
   display: flex;
 }
+
 .profile-bg-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
+
 .profile-data-container {
   width: auto;
 }
+
 .profile-about {
   display: flex;
   justify-content: space-between;
 
 }
+
 .profile-about-avatar-img {
   position: absolute;
   top: 120px;
   left: 50px;
 }
+
 .profile-about-me {
   position: absolute;
   left: 220px;
 }
+
 .profile-about-me-name {
   font-weight: bold;
   color: var(--colorText);
   font-size: 30px;
   font-weight: bold;
 }
+
 .profile-about-me-description {
   color: var(--colorText);
   font-size: 15px;
   text-align: justify;
 }
+
 .profile-actions {
   display: flex;
   flex-direction: row;
@@ -376,26 +412,31 @@ body {
   left: 40px;
   top: 30px;
 }
+
 .button {
   color: var(--colorText);
   border-color: var(--borderColor);
 }
+
 .profile-actions-more-btn {
   width: 40px;
   height: 40px;
   border-radius: 5px;
 }
+
 .profile-actions-message-btn {
   width: 80px;
   height: 40px;
   border-radius: 5px;
 }
+
 .profile-actions-follow-btn {
   width: 100px;
   height: 40px;
   border-radius: 5px;
   background-color: var(--contrastColor);
 }
+
 /* AboutMe componet */
 .aboutMe-container {
   width: 400px;
@@ -403,22 +444,26 @@ body {
   /* margin-left: 150px; */
 
 }
+
 .aboutMe-experience {
   width: auto;
   height: auto;
   margin-bottom: 20px;
 }
+
 .title {
   font-size: 20px;
   width: fit-content;
   color: var(--contrastColor);
 }
+
 .text {
   font-size: 15px;
   color: var(--colorText);
   text-align: justify;
   margin-top: 5px;
 }
+
 .btn-readMore {
   color: var(--colorText);
   text-transform: none;
@@ -426,9 +471,11 @@ body {
   margin-left: -10px;
   font-size: 15px;
 }
+
 .btn-icon {
   color: var(--contrastColor);
 }
+
 /* GeneralDataUP component */
 .generalData-container {
   width: 400px;
@@ -438,23 +485,27 @@ body {
   /* margin-left: 250px; */
 
 }
+
 .title {
   font-size: 20px;
   color: var(--contrastColor);
 }
+
 .data {
   color: var(--colorText);
   text-align: justify;
   margin-top: 5px;
 }
+
 .generalData-skills-chips {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .chips-container {
   max-width: 350px;
-  max-height: 80px ;
+  max-height: 80px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -462,17 +513,21 @@ body {
   margin-bottom: 10px;
   margin-top: 5px;
 }
+
 .chips-container::-webkit-scrollbar {
   display: none;
 }
+
 .chip {
   color: var(--colorText);
   margin: 4px;
 }
+
 .generalData-skills-addButton-icon {
   color: var(--contrastColor);
   font-size: 45px;
 }
+
 /* MyProjectsUP component */
 .myProjects-container {
   width: 400px;
@@ -480,28 +535,33 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .myProjects-carousel {
   height: 200px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
+
 .carousel-item {
   height: 200px;
 }
+
 /* Estilos de SkillForm */
 .skills {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .skillForm-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 40px;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
+
 .skillForm-leftSide {
   width: 400px;
   height: 800px;
@@ -510,6 +570,7 @@ body {
   align-items: center;
   background: var(--backgroundWhite);
 }
+
 .skillForm-labels {
   display: flex;
   flex-direction: column;
@@ -517,13 +578,16 @@ body {
   align-items: center;
   margin-top: 20px;
 }
+
 .skillForm-aboutYou {
   font-size: 36px;
   color: var(--contrastColor);
 }
+
 .skillForm-tellUs {
   font-size: 26px;
 }
+
 .skillForm-userPhoto {
   width: 280px;
   height: 280px;
@@ -531,12 +595,14 @@ body {
   position: relative;
   top: 50px;
 }
+
 .userPhoto-img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  object-fit:cover;
+  object-fit: cover;
 }
+
 .userPhoto-bttn {
   position: absolute;
   bottom: 0;
@@ -544,40 +610,48 @@ body {
   top: -185px;
   border-radius: 50%;
 }
+
 .userPhoto-icon {
   font-size: 40px;
   color: var(--contrastColor);
 }
+
 .skillForm-rightSide {
   width: 600px;
   height: 800px;
   display: flex;
   flex-direction: column;
 }
+
 .skillForm-logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .skillForm-welcome {
   font-size: 35px;
   color: var(--contrastColor);
 }
+
 .skillForm-img {
   width: 280px;
   height: 80px;
   object-fit: contain;
 }
+
 .skillForm-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.skillForm-autoComplete{
+
+.skillForm-autoComplete {
   width: 500px;
   margin: 20px;
 }
+
 .skillForm-names {
   width: 500px;
   display: flex;
@@ -585,37 +659,113 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .names {
   width: 245px;
 }
+
 .input-large {
   width: 500px;
 }
+
 .skillForm-location,
 .skillForm-aboutU {
   margin: 15px;
 }
+
 .skillForm-formChips {
   width: 500px;
   margin: 20px;
 }
+
 .skillForm-boxChips {
   height: 35px;
   overflow-y: scroll;
 }
+
 .skillForm-chips {
   color: var(--colorText);
   border: solid 1px var(--contrastColor);
 }
+
 .skillForm-beggins {
   width: 500px;
   font-size: 20px;
 }
+
+projectDetailsimg {
+  width: 9rem;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+
+.projectBanner {
+  margin-top: 5rem;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.BlueTitle {
+  color: var(--contrastColor);
+  width: fit-content;
+  border-bottom: 3px solid var(--borderColor);
+  line-height: 1.8;
+}
+
+.projectTitle {
+  color: var(--colorText);
+  width: fit-content;
+
+}
+
+.ProjectDescription {
+  padding-top: 2rem;
+  max-width: 50vw;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.userAvatar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  vertical-align: middle;
+  margin-bottom: 10px;
+
+}
+
+.avatarName {
+  color: var(--colorText);
+  margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.teamContainer {
+  min-height: 50vh;
+  border-left: 2px solid var(--borderColor);
+  padding-left: 1rem;
+}
+
+.descriptionContainer {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 @media (max-width: 768px) {
+
   /*Login styles mobile*/
-  .navContainer{
+  .navContainer {
     display: none;
   }
+
   .socialGroupButtons {
     display: flex;
     flex-direction: column;
@@ -625,6 +775,7 @@ body {
     overflow-y: scroll;
     flex: none;
   }
+
   .login-container {
     overflow-y: scroll;
     margin-top: 0rem;
@@ -634,40 +785,47 @@ body {
     width: 100%;
     min-width: fit-content;
   }
-  
+
   .perks {
     width: 100%;
     text-align: center;
     justify-content: center;
   }
+
   .perkList {
     display: flex;
     justify-content: center;
     padding-left: 1.5rem;
   }
+
   .perk-component {
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
   }
+
   .login-form {
     width: 100%;
     top: 0;
   }
+
   .form-container {
     display: none;
   }
+
   /*navcomponent styles mobile*/
   .navigation-Bar {
     display: flex;
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content: flex-start;
   }
+
   .brandLogo {
     width: 3rem;
     align-self: center;
   }
-  .navBrand{
+
+  .navBrand {
     width: 3rem;
   }
 
@@ -687,6 +845,7 @@ body {
     margin-left: 2.6rem;
     margin-right: auto;
   }
+
   .wwa {
     background-color: var(--contrastColor);
     color: #d49b54;
@@ -708,6 +867,7 @@ body {
     z-index: 15;
     color: var(--colorText);
   }
+
   .mainNav {
     background-color: #212121;
   }
@@ -719,6 +879,7 @@ body {
     justify-content: center;
     align-items: center;
   }
+
   .card-container {
     position: relative;
     top: 3rem;
@@ -735,10 +896,12 @@ body {
     margin-top: 80px;
     flex-direction: column;
   }
+
   /* Profile component */
   .profile-bg-img {
     height: 180px;
   }
+
   .profile-about-avatar-img {
     width: 100px;
     height: 100px;
@@ -746,108 +909,185 @@ body {
     top: 130px;
     left: 20px;
   }
+
   .profile-about-me {
     position: absolute;
     left: 20px;
     top: 230px;
   }
+
   .profile-about-me-description {
     overflow-y: hidden;
   }
+
   .profile-about-me-name {
     font-size: 25px;
   }
+
   .profile-actions {
     top: 150px;
     left: -60px;
     display: flex;
   }
+
   .profile-actions-more-btn {
     width: 20px;
     height: 30px;
     margin-right: 10px;
   }
+
   .profile-actions-message-btn {
     width: 80px;
     height: 30px;
     margin-right: 10px;
 
   }
+
   .profile-actions-follow-btn {
     width: 100px;
     height: 30px;
     margin-right: 10px;
 
   }
+
   /* AboutMe componet */
   .aboutMe-container {
     width: 300px;
     margin-left: 40px;
   }
+
   /* GeneralDataUP component */
   .generalData-container {
     width: 300px;
     margin-left: 40px;
   }
+
   /* MyProjectsUP component */
   .myProjects-container {
     width: 300px;
     margin-left: 40px;
   }
+
   .myProjects-carousel {
     height: 180px;
 
   }
+
   .carousel-item {
     height: 180px;
   }
+
   /* Estilos de SkillForm */
   .skillForm-container {
     flex-direction: column;
     justify-self: center;
   }
+
   .skillForm-leftSide {
     width: 350px;
     height: 450px;
     margin-bottom: 20px;
   }
+
   .skillForm-aboutYou {
     font-size: 32px;
   }
+
   .skillForm-tellUs {
     font-size: 22px;
   }
+
   .skillForm-userPhoto {
     width: 240px;
     height: 240px;
   }
+
   .userPhoto-img {
     width: 210px;
     height: 210px;
   }
+
   .userPhoto-bttn {
     left: 160px;
     top: -158px;
   }
+
   .skillForm-rightSide {
     width: 350px;
   }
+
   .skillForm-autoComplete {
     width: 320px;
   }
+
   .skillForm-names {
     width: 320px;
   }
+
   .names {
     width: 150px;
   }
+
   .input-large {
     width: 320px;
   }
+
   .skillForm-formChips {
     width: 320px;
   }
+
   .skillForm-beggins {
     width: 320px;
   }
+
+  /*Project details styles-mobile*/
+  .BlueTitle {
+    margin: 0 auto 0 auto;
+    color: var(--contrastColor);
+    width: fit-content;
+    border-bottom: 3px solid var(--borderColor);
+    line-height: 1.8;
+
+  }
+
+  .projectTitle {
+    color: var(--colorText);
+    width: fit-content;
+
+  }
+
+  .descriptionContainer {
+    text-align: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ProjectDescription {
+    padding-top: 2rem;
+    max-width: 80vw;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .teamContainer {
+
+    min-height: fit-content;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    border-left: none;
+    padding-left: 1rem;
+  }
+
+  .teamWrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
