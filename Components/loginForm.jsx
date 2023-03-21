@@ -1,20 +1,24 @@
-import React from "react";
-import Image from "next/image";
-import { TextField, Button, IconButton } from "@mui/material";
-import GroupIcon from "@mui/icons-material/Group";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import LaptopIcon from "@mui/icons-material/Laptop";
-import LockIcon from "@mui/icons-material/Lock";
-import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import { Row, Col } from "react-bootstrap";
-import JoinModal from "./JoinModal";
-import { loginWithFacebook, loginWithGoogle, signInWhitEmail } from "../Utils/firebase";
-import { useState } from "react";
+import React from 'react';
+
+import { IconButton } from '@mui/material';
+import GroupIcon from '@mui/icons-material/Group';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import LaptopIcon from '@mui/icons-material/Laptop';
+import LockIcon from '@mui/icons-material/Lock';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+
+import JoinModal from './JoinModal';
+import {
+  loginWithFacebook,
+  loginWithGoogle,
+  signInWhitEmail,
+} from '../Utils/firebase';
+import { useState } from 'react';
 
 function loginForm() {
   const [email, setemail] = useState('');
@@ -22,7 +26,7 @@ function loginForm() {
   return (
     <div className="login-container">
       <div className="perks">
-        <h3 id="perks">Unete a la comunidad</h3>
+        <h3 id="perks">Únete a la comunidad</h3>
         <p>
           Miles de compañeros te esperan, recuerda que todo proyecto tiene un
           futuro
@@ -38,13 +42,13 @@ function loginForm() {
           <li className="perkList">
             <div className="d-flex perk-component">
               <CheckCircleIcon className="me-4" sx={{ fontSize: 80 }} />
-              <h5>Recomendasiones a tu medida</h5>
+              <h5>Recomendaciones a tu medida</h5>
             </div>
           </li>
           <li className="perkList ">
             <div className="d-flex perk-component">
               <LaptopIcon className="me-4" sx={{ fontSize: 80 }} />
-              <h5>Proyectos Inovadores. </h5>
+              <h5>Proyectos Inovadores</h5>
             </div>
           </li>
         </ul>
@@ -62,9 +66,9 @@ function loginForm() {
             <InputGroup.Text
               onChange={(e) => setemail(e.target.value)}
               id="basic-addon1"
-              style={{ backgroundColor: "#545454", border: "none" }}
+              style={{ backgroundColor: '#545454', border: 'none' }}
             >
-              <AccountCircleIcon sx={{ color: "#dddd" }} />
+              <AccountCircleIcon sx={{ color: '#dddd' }} />
             </InputGroup.Text>
             <Form.Control
               onChange={(e) => setemail(e.target.value)}
@@ -72,19 +76,19 @@ function loginForm() {
               aria-label="Username"
               aria-describedby="basic-addon1"
               className="loginInputs text-light"
-              style={{ backgroundColor: "#545454", border: "none" }}
+              style={{ backgroundColor: '#545454', border: 'none' }}
             />
           </InputGroup>
           <InputGroup className="mb-3">
             <InputGroup.Text
               id="basic-addon1"
               style={{
-                backgroundColor: "#545454",
-                border: "none",
-                outlineColor: "none",
+                backgroundColor: '#545454',
+                border: 'none',
+                outlineColor: 'none',
               }}
             >
-              <LockIcon sx={{ color: "#dddd" }} />
+              <LockIcon sx={{ color: '#dddd' }} />
             </InputGroup.Text>
             <Form.Control
               onChange={(e) => setpassword(e.target.value)}
@@ -93,7 +97,7 @@ function loginForm() {
               type="password"
               className="loginInputs text-light"
               aria-describedby="basic-addon1"
-              style={{ backgroundColor: "#545454", border: "none" }}
+              style={{ backgroundColor: '#545454', border: 'none' }}
             />
           </InputGroup>
         </div>
@@ -104,7 +108,7 @@ function loginForm() {
             className="btn mb-2 btn-dark outline-btn loginBtn "
             onClick={() => signInWhitEmail(email, password)}
           >
-            {"Ingresar a tu cuenta"}
+            {'Ingresar a tu cuenta'}
           </button>
           {/*           <button
             variant="contained"
@@ -119,14 +123,14 @@ function loginForm() {
             <GoogleIcon
               className="socialIconButtpn"
               fontSize="large"
-              sx={{ color: "#4285F4" }}
+              sx={{ color: '#4285F4' }}
             />
           </IconButton>
           <IconButton aria-label="delete" onClick={loginWithFacebook}>
             <FacebookIcon
               className="socialIconButtpn"
               fontSize="large"
-              sx={{ color: "#4267B2" }}
+              sx={{ color: '#4267B2' }}
             />
           </IconButton>
         </div>
