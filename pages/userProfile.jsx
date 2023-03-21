@@ -50,7 +50,9 @@ export default function userProfile() {
             <AboutMe user={user} />
             <div className="information-container-right">
               <GeneralDataUP user={user} />
-              {user.projects?.length > 0 && <MyProjectsUP user={user} />}
+              {user.projects?.length > 0 && (
+                <MyProjectsUP user={user} userID={id} />
+              )}
             </div>
           </div>
         </div>
