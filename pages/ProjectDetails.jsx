@@ -26,8 +26,6 @@ function ProjectDetails(props) {
     if (project) isLoading(false);
   }, [project]);
 
-  console.log(project);
-
   return loading ? (
     <div>Loading...</div>
   ) : (
