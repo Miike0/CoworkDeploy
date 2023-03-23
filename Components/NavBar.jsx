@@ -11,6 +11,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { logOut } from '../Utils/firebase';
 import { useRouter } from 'next/router';
+import CreateNewProject from './CreateNewProject';
 
 export default function NavBar({ user }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,6 +43,7 @@ export default function NavBar({ user }) {
           <HomeIcon className="icon" sx={{ fontSize: 40 }} />
           <WorkIcon className="icon" sx={{ fontSize: 40 }} />
           <NotificationsIcon className="icon" sx={{ fontSize: 40 }} />
+          <CreateNewProject/>
         </div>
       </Nav>
       <Nav>

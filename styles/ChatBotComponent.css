@@ -1,0 +1,118 @@
+:root {
+    --backgroundGeneral: #212121;
+    --backgroundcomponents: #212121;
+    --contrastColor: #4098d3;
+    --borderColor: #dddddd;
+    --gold: #d49b54;
+    --colorText: #ffffff;
+    --colorTextOnWhite: #212121;
+    --backgroundWhite: #ffffff;
+  }
+.chatButton-Container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.chatbotContainer {
+    position: fixed;
+    bottom: 40px;
+    right: 80px;
+
+}
+.botAvatar {
+    margin-right: 15px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.userAvatar {
+    margin-left: 15px;
+    object-fit: contain;
+}
+.react-chatbot-kit-chat-container {
+}
+
+.react-chatbot-kit-chat-inner-container {
+    background-color: #212121;
+    border: solid 0.5px #fff;
+}
+
+.react-chatbot-kit-chat-header {
+    display: none;
+}
+
+.react-chatbot-kit-chat-input-container {
+    background-color: var(--backgroundcomponents);
+
+}
+
+.react-chatbot-kit-chat-message-container {
+}
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar {
+    display: none;
+}
+.react-chatbot-kit-chat-input {
+    background-color: #212121;
+    border: solid 0.5px #fff;
+    color: #fff;
+}
+
+.react-chatbot-kit-chat-input-form {
+}
+
+.react-chatbot-kit-chat-input::placeholder {
+}
+
+.react-chatbot-kit-chat-btn-send {
+    cursor: pointer;
+}
+
+.react-chatbot-kit-chat-btn-send-icon {
+
+}
+
+.react-chatbot-kit-chat-bot-message-container {
+
+}
+
+.react-chatbot-kit-chat-bot-avatar-container {
+
+}
+
+.react-chatbot-kit-chat-bot-avatar-icon {
+}
+
+.react-chatbot-kit-chat-bot-avatar-letter {
+}
+
+.react-chatbot-kit-chat-bot-message {
+}
+
+.react-chatbot-kit-chat-bot-message-arrow {
+}
+
+.react-chatbot-kit-chat-bot-loading-icon-container {
+}
+
+.chatbot-loader-container {
+}
+
+#chatbot-loader #chatbot-loader-dot1 {
+}
+
+#chatbot-loader #chatbot-loader-dot2 {
+}
+
+#chatbot-loader #chatbot-loader-dot3 {
+}
+
+.react-chatbot-kit-error {
+}
+
+.react-chatbot-kit-error-container {
+}
+
+.react-chatbot-kit-error-header {
+}
+
+.react-chatbot-kit-error-docs {
+}
