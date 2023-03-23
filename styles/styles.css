@@ -759,6 +759,56 @@ projectDetailsimg {
   justify-content: space-evenly;
 }
 
+/* Estilos Chatbot */
+
+.chatButton-Container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+.chatbotContainer {
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+  z-index: 10;
+}
+.botAvatar {
+  margin-right: 15px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.userAvatar {
+  margin-left: 15px;
+  object-fit: contain;
+}
+.react-chatbot-kit-chat-inner-container {
+  height: 500px !important;
+  background-color: var(--backgroundGeneral) !important;
+  border: solid 0.5px #fff !important;
+}
+
+.react-chatbot-kit-chat-header {
+  display: none !important;
+}
+.react-chatbot-kit-chat-input-container {
+  background-color: var(--backgroundGeneral);
+}
+
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar {
+  display: none;
+}
+.react-chatbot-kit-chat-input {
+  background-color: var(--backgroundGeneral);
+  border: solid 0.5px #fff !important;
+  color: #fff;
+}
+
+.react-chatbot-kit-chat-btn-send {
+  cursor: pointer;
+}
+
+
 @media (max-width: 768px) {
 
   /*Login styles mobile*/
