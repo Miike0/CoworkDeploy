@@ -10,10 +10,13 @@ function ProjectCard(props) {
       <a
         onClick={() => {
           sessionStorage.setItem('projectID', project.id);
-          router.push({
-            pathname: '/ProjectDetails',
-            query: { id: project.id },
-          });
+          router.push(
+            {
+              pathname: '/ProjectDetails',
+              query: { id: project.id },
+            },
+            '/ProjectDetails',
+          );
         }}
         variant="contained"
         color="success"
