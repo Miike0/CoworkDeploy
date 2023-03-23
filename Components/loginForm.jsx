@@ -16,7 +16,7 @@ import JoinModal from './JoinModal';
 import {
   loginWithFacebook,
   loginWithGoogle,
-  signInWhitEmail,
+  signInWithEmail,
 } from '../Utils/firebase';
 import { useState } from 'react';
 
@@ -64,7 +64,6 @@ function loginForm() {
         <div className="mt-3 ">
           <InputGroup className="mb-3">
             <InputGroup.Text
-              onChange={(e) => setemail(e.target.value)}
               id="basic-addon1"
               style={{ backgroundColor: '#545454', border: 'none' }}
             >
@@ -106,7 +105,7 @@ function loginForm() {
           <button
             variant="contained"
             className="btn mb-2 btn-dark outline-btn loginBtn "
-            onClick={() => signInWhitEmail(email, password)}
+            onClick={() => signInWithEmail(email, password)}
           >
             {'Ingresar a tu cuenta'}
           </button>
