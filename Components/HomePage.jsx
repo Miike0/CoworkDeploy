@@ -9,23 +9,49 @@ import { API_URL } from '../Utils/Constants.js';
 export default function HomePage({ userData }) {
   const [allProjects, setAllProjects] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [sortedProjectsList, setSortedProjectsList] = useState([]);
+  const [sortedProjects, setSortedProjects] = useState([]);
   const [filters, setFilters] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
-  const getProjects = async () => {
-    await axios
-      .get(API_URL + 'projects')
-      .then((res) => setAllProjects(res.data.data));
-  };
-
   useEffect(() => {
+    const getProjects = async () => {
+      await axios.get(API_URL + 'projects').then((res) => {
+        console.log(res);
+        setAllProjects([...res.data.data]);
+      });
+    };
+    const getRecommended = async () => {
+      await axios
+        .get(API_URL + 'recommendation?id=' + userData.uid)
+        .then((res) => {
+          console.log(res);
+          setSortedProjectsList(res.data.sortedProjects);
+        });
+    };
+    console.log(userData);
     getProjects();
+    getRecommended();
   }, []);
 
   useEffect(() => {
     setIsLoading(false);
+
     setProjects(allProjects);
   }, [allProjects]);
+
+  useEffect(() => {
+    const sortProjects = () => {
+      const sortedArray = sortedProjectsList.map((id) => {
+        return projects.filter((project) => id === project.id);
+      });
+
+      setSortedProjects(sortedArray);
+    };
+    if (projects && sortedProjectsList) {
+      sortProjects();
+    }
+  }, [projects, sortedProjectsList]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -52,14 +78,17 @@ export default function HomePage({ userData }) {
         <SeachFilters filters={filters} onSearch={searchHandler} />
         <div className="card-container ">
           <Row>
-            {projects.length > 0 &&
-              projects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  userData={userData}
-                />
-              ))}
+            {sortedProjects.length > 0 &&
+              sortedProjects.map((project) => {
+                console.log(sortedProjects);
+                return (
+                  <ProjectCard
+                    key={project[0].id}
+                    project={project[0]}
+                    userData={userData}
+                  />
+                );
+              })}
           </Row>
         </div>
       </div>

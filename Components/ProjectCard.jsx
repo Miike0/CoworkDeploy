@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import axios from 'axios';
+import { API_URL } from '../Utils/Constants.js';
 
 function ProjectCard(props) {
   const { project } = props;
   const router = useRouter();
+
+  const [membersFetched, setMembersFetched] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const getMembers = async () => {
+      const data = project.data.members.map(async (member) => {
+        const res = await axios.get(API_URL + 'user?id=' + member);
+
+        return { id: member, data: res.data.data };
+      });
+      const fetchedMembers = await Promise.all(data);
+
+      setMembersFetched(fetchedMembers);
+      setIsLoading(false);
+    };
+
+    if (project.data.members) {
+      getMembers();
+    }
+  }, []);
+
   return (
     <Col xl={3} lg={4} md={6} sm={12} className="my-2 card-container2">
       <a
@@ -31,18 +55,22 @@ function ProjectCard(props) {
             <p>{project.data.description}</p>
 
             <div className="d-flex justify-content-center">
-              {project.data.members?.map((member, project) => {
-                return (
-                  <img
-                    key={`${project}_${member}`}
-                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                    className="rounded-circle mr-1"
-                    alt="Avatar"
-                    width="28"
-                    height="28"
-                  />
-                );
-              })}
+              {!isLoading &&
+                project.data.members?.map((member, project) => {
+                  return (
+                    <img
+                      key={`${project}_${member}`}
+                      src={
+                        membersFetched.find((_member) => _member.id === member)
+                          ?.data?.avatar
+                      }
+                      className="rounded-circle mr-1"
+                      alt="Avatar"
+                      width="28"
+                      height="28"
+                    />
+                  );
+                })}
             </div>
           </div>
           <div></div>
