@@ -9,7 +9,6 @@ import { API_URL } from '../Utils/Constants.js';
 function ProjectTeam(props) {
   const members = Object.values(props.members || []);
   const skills = Object.values(props.skills || []);
-  console.log(props);
 
   const [membersFetched, setMembersFetched] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

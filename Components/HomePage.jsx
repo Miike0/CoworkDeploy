@@ -13,9 +13,10 @@ export default function HomePage({ userData }) {
   const [isLoading, setIsLoading] = useState(true);
 
   const getProjects = async () => {
-    await axios
-      .get(API_URL + 'projects')
-      .then((res) => setAllProjects(res.data.data));
+    await axios.get(API_URL + 'projects').then((res) => {
+      console.log(res);
+      setAllProjects(res.data.data);
+    });
   };
 
   useEffect(() => {
