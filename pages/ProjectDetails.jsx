@@ -25,7 +25,8 @@ function ProjectDetails(props) {
   useEffect(() => {
     if (project) isLoading(false);
   }, [project]);
-  return loading || !project ? (
+
+  return loading ? (
     <div>Loading...</div>
   ) : (
     <div className="d-flex flex-column">
@@ -35,8 +36,11 @@ function ProjectDetails(props) {
         <h2 className="projectTitle">{project.name}</h2>
       </div>
       <div className="descriptionContainer d-flex ">
-        <ProjectDescription description={project.description} />
-        <ProjectTeam members={project.members} tags={project.skills} />
+        <ProjectDescription
+          description={project.description}
+          additionalInfo={project.additionalInfo}
+        />
+        <ProjectTeam members={project.members} skills={project.skills} />
       </div>
     </div>
   );

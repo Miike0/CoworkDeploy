@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import HomePage from "../Components/HomePage";
 import LoginPage from "../Components/LoginPage";
 import { onAuthStateChanged } from "../Utils/firebase";
+import ChatbotComponent from '../Components/ChatBotComponent';
 
 export default function index() {
   const [user, setUser] = useState(undefined);
@@ -10,8 +11,13 @@ export default function index() {
     onAuthStateChanged(setUser);
   }, []);
 
-  return <div>
+  return (
+    <div>
+      
     {user === null && <LoginPage/>} 
     {user && <HomePage userData={user}/>}
-  </div>;
+      <ChatbotComponent />
+    
+  </div>
+  );
 }

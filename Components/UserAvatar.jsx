@@ -1,17 +1,15 @@
-import { Avatar } from '@mui/material'
-import React from 'react'
+import { Avatar } from '@mui/material';
+import React from 'react';
 
 function UserAvatar({ image, name }) {
-    return (
-        <div className=''>
-            <div className='userAvatar'>
-                <Avatar />
-                <h6 className='avatarName'>{name}</h6>
-            </div>
-
-
-        </div>
-    )
+  return (
+    <div className="">
+      <div className="userAvatar">
+        <Avatar src={image || null} />
+        <h6 className="avatarName">{name}</h6>
+      </div>
+    </div>
+  );
 }
 
-export default UserAvatar
+export default UserAvatar;
