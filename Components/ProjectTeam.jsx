@@ -31,7 +31,14 @@ function ProjectTeam(props) {
   return (
     <div className="teamContainer">
       <div className="d-flex justify-content-between">
-        <Button className="primaryButton">Unirme al proyecto</Button>
+        <Button
+          className="primaryButton"
+          onClick={() => {
+            props.setShowJoinRequestModal(true);
+          }}
+        >
+          Unirme al proyecto
+        </Button>
         <Button className="secondaryButton">Contactar al líder</Button>
       </div>
       <div className="teamWrapper">

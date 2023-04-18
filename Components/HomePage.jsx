@@ -23,13 +23,11 @@ export default function HomePage({ userData }) {
     };
     const getRecommended = async () => {
       await axios
-        .get(API_URL + 'recommendation?id=' + userData.uid)
+        .get(API_URL + 'recommendation/v2?id=' + userData.uid)
         .then((res) => {
-          console.log(res);
-          setSortedProjectsList(res.data.sortedProjects);
+          setSortedProjectsList(res.data.sortedData);
         });
     };
-    console.log(userData);
     getProjects();
     getRecommended();
   }, []);
