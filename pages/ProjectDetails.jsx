@@ -47,12 +47,10 @@ function ProjectDetails(props) {
   }, [project, user, userID, projectID]);
 
   const sendNotification = async () => {
-    await axios
-      .post(API_URL + 'project/join', {
-        requester: userID,
-        project: projectID,
-      })
-      .then((res) => setProject(res.data.data));
+    await axios.post(API_URL + 'project/join', {
+      requester: userID,
+      project: projectID,
+    });
 
     setSendNotificationModalShown(false);
   };
