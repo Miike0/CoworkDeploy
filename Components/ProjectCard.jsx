@@ -5,7 +5,8 @@ import axios from 'axios';
 import { API_URL } from '../Utils/Constants.js';
 
 function ProjectCard(props) {
-  const { project } = props;
+  const { project, userData } = props;
+  console.log(userData);
   const router = useRouter();
 
   const [membersFetched, setMembersFetched] = useState([]);
@@ -34,10 +35,11 @@ function ProjectCard(props) {
       <a
         onClick={() => {
           sessionStorage.setItem('projectID', project.id);
+          sessionStorage.setItem('userID', userData.uid);
           router.push(
             {
               pathname: '/ProjectDetails',
-              query: { id: project.id },
+              query: { id: project.id, user: userData.uid },
             },
             '/ProjectDetails',
           );
