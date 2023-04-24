@@ -14,7 +14,11 @@ import Select from '@mui/material/Select';
 import { useTheme } from '@mui/material/styles';
 import { alpha, styled } from '@mui/material/styles';
 import Checkbox from '@mui/material/Checkbox';
-import { coWorkLogo, skillsValues, udgCampus, userAvatarDefault } from '../Utils/Constants';
+import { coWorkLogo, skillsValues, udgCampus, userAvatarDefault, API_URL} from '../Utils/Constants';
+import axios from 'axios';
+import { auth } from '../Utils/firebase';
+
+
 
 
 
@@ -123,9 +127,15 @@ function getStyles(name, chip, theme) {
 
 function SkillForm() {
 
+    const [universityCenter, setUniversityCenter] = useState('');
+    const [name, setName] = useState('');
+    const [lastName, setLastname] = useState('');
+    const [location, setLocation] = useState('');
+    const [description, setDescription] = useState('');
+    const [previousExpertise, setPreviousExpertise] = useState('');
+    const [about, setAbout] = useState('');
     const [imageUser, setImageUser] = useState(userAvatarDefault);
     const [uploadUserImage, setUploadUserImage] = useState(null);
-    
     const theme = useTheme();
     const [skills, setSkills] = useState([]);
 
@@ -147,11 +157,26 @@ function SkillForm() {
       setSkills (
         typeof value === 'string' ? value.split(',') : value,
       );
-      console.log(skills)
     };
 
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      const userInfo = {
+        userInfo : auth.currentUser.uid,
+        avatar : uploadUserImage,
+        firstname : name,
+        lastname : lastName,
+        college : universityCenter,
+        location : location,
+        skills : skills,
+        experience : previousExpertise,
+        aboutMe : about,
+        description : description,
+      };
+      axios.post(API_URL + userInfo.userInfo, userInfo);
+    }
     return (
-      <div className='skillForm-container'>
+      <form className='skillForm-container' onSubmit={handleSubmit}>
           
           <div className='skillForm-leftSide'>
             <div className="skillForm-labels">
@@ -191,6 +216,7 @@ function SkillForm() {
                 }}
                 renderInput={(params) => 
                   <CssTextField 
+                    required
                     label="Centro Universitario"
                     size='small'
                     InputLabelProps={{
@@ -201,6 +227,7 @@ function SkillForm() {
                     
                   />
                 }
+                onChange={(e) => setUniversityCenter(e.target.innerText)}
               />
               <Box className='skillForm-names'>
                 <CssTextField 
@@ -211,6 +238,7 @@ function SkillForm() {
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
+                  onBlur={e => setName(e.target.value)}
                 />
                 <CssTextField 
                   className='skillForm-apellidos input names'
@@ -220,6 +248,7 @@ function SkillForm() {
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
+                  onBlur={e => setLastname(e.target.value)}
                 />
               </Box>
               <CssTextField
@@ -230,6 +259,7 @@ function SkillForm() {
                 InputLabelProps={{
                   style: { color: 'white' },
                 }}
+                onBlur={e => setLocation(e.target.value)}
               />
               <CssTextField
                 className='skillForm-descripcion input input-large'
@@ -244,6 +274,7 @@ function SkillForm() {
                 }}
                 multiline
                 rows={2}
+                onBlur={e => setDescription(e.target.value)}
               />
 
               <FormControl className='skillForm-formChips'>
@@ -294,6 +325,7 @@ function SkillForm() {
                 }}
                 multiline
                 rows={4}
+                onBlur={e => setPreviousExpertise(e.target.value)}
               />
               <CssTextField
                 className='skillForm-aboutU input input-large'
@@ -308,11 +340,13 @@ function SkillForm() {
                 }}
                 multiline
                 rows={4}
+                onBlur={e => setAbout(e.target.value)}
+
               />
-              <Button className='skillForm-beggins' variant="contained">Comenzar</Button>
+              <Button className='skillForm-beggins' variant="contained" type='submit'>Comenzar</Button>
             </div>
           </div>
-      </div>
+      </form>
     );
 }
 
