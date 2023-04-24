@@ -29,7 +29,6 @@ import StepContent from '@mui/material/StepContent';
 import Paper from '@mui/material/Paper';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
-import ImagePicker from './ImagePicker';
 const style = {
   position: 'absolute',
   top: '50%',
