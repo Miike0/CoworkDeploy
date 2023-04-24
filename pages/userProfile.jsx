@@ -17,7 +17,6 @@ export default function userProfile() {
 
   useEffect(() => {
     const getUserInfo = async () => {
-      console.log(id); // add this line to check the value of id
       if (id) {
         try {
           const res = await axios.get(API_URL + 'user?id=' + id);

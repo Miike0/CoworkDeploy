@@ -5,7 +5,6 @@ import AddCircleSharpIcon from '@mui/icons-material/AddCircleSharp';
 import Stack from '@mui/material/Stack';
 
 function GeneralDataUP({ user }) {
-  console.log(user);
   return (
     <div className="generalData-container">
       {user.skills?.length > 0 && (

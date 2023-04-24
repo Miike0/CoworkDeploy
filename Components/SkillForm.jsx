@@ -147,7 +147,6 @@ function SkillForm() {
       setSkills (
         typeof value === 'string' ? value.split(',') : value,
       );
-      console.log(skills)
     };
 
     return (
