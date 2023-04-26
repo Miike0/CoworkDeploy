@@ -34,7 +34,6 @@ function ProjectDetails(props) {
     else projectKey = props.router.query.id;
     if (!props.router.query.user) userKey = sessionStorage.getItem('userID');
     else userKey = props.router.query.user;
-    console.log({ projectKey, userKey });
     getProject(projectKey);
     getUser(userKey);
     setUserID(userKey);

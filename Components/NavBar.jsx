@@ -22,7 +22,6 @@ export default function NavBar({ user }) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  console.log(user);
   const router = useRouter();
   return (
     <Navbar collapseOnSelect expand="lg" className="navigation-Bar">
@@ -71,7 +70,6 @@ export default function NavBar({ user }) {
         >
           <MenuItem
             onClick={() => {
-              console.log(user);
               router.push({
                 pathname: '/userProfile',
                 query: { id: user.uid },
