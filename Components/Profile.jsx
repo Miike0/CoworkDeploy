@@ -33,12 +33,14 @@ function Profile({ user }) {
           </Col>
           <Col md="auto" className="profile-actions">
             <Col md="4" className="profile-actions-more">
-              <Button
-                variant="outlined"
-                className="profile-actions-more-btn button"
-              >
-                <MoreHorizOutlinedIcon fontSize="medium" />
-              </Button>
+              {user.email === auth.currentUser.email && (
+                <Button
+                  variant="outlined"
+                  className="profile-actions-more-btn button"
+                >
+                  <MoreHorizOutlinedIcon fontSize="medium" />
+                </Button>
+              )}
             </Col>
             <Col md="5" className="profile-actions-message">
               <Button
