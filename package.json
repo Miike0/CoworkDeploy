@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "next dev",
+    "dev": "next dev",
     "build": "next build",
-    "dev": "next start",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -30,7 +30,8 @@
     "react-dom": "^18.2.0",
     "react-select": "^5.7.1",
     "recoil": "^0.7.6",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "eslint": "^8.34.0",

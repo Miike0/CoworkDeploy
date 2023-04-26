@@ -17,7 +17,6 @@ export default function HomePage({ userData }) {
   useEffect(() => {
     const getProjects = async () => {
       await axios.get(API_URL + 'projects').then((res) => {
-        console.log(res);
         setAllProjects([...res.data.data]);
       });
     };
@@ -78,10 +77,9 @@ export default function HomePage({ userData }) {
           <Row>
             {sortedProjects.length > 0 &&
               sortedProjects.map((project) => {
-                console.log(sortedProjects);
                 return (
                   <ProjectCard
-                    key={project[0].id}
+                    key={project[0]?.id}
                     project={project[0]}
                     userData={userData}
                   />

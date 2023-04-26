@@ -62,7 +62,6 @@ export const signInWithEmail = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log('emm', user);
       return mapUser(user);
     })
     .catch((error) => {
@@ -76,7 +75,6 @@ export const loginWithGoogle = () => {
   signInWithPopup(auth, googleProvider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
-      console.log(result);
       return mapUser(result.user);
     })
     .catch((error) => {
@@ -108,7 +106,6 @@ export const logOut = () => {
 
 export const onAuthStateChanged = (onChange) => {
   return auth.onAuthStateChanged((user) => {
-    console.log('el user', user);
     const mappedUser = mapUser(user);
     onChange(mappedUser);
   });

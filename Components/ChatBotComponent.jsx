@@ -23,7 +23,6 @@ function ChatbotComponent() {
   }
 
   const validatorInput = ( message ) => {
-    console.log(message)
     if (!message) {
       return false
     }
