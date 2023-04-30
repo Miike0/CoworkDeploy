@@ -812,6 +812,18 @@ projectDetailsimg {
 .editProject-icon {
   color:  var(--contrastColor);
 }
+
+.editProject-box {
+  width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--backgroundcomponents);
+  padding: 4;
+  border-radius: 5px;
+}
+
 .editProject-container {
   display: flex;
   flex-direction: column;
@@ -1251,6 +1263,59 @@ projectDetailsimg {
     align-content: center;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Edit project styles */
+
+  .editProject-box {
+    width: 400px;
+  }
+
+  .editProjectName-container {
+    justify-content: center;
+  }
+
+  .projectPhoto {
+    width: 120px;
+    height: 120px;
+  }
+
+  .projectPhoto-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .projectPhoto-bttn  {
+    width: 20px;
+    height: 20px;
+    left: 105px;
+    top: 14px;
+  }
+
+  .projectName {
+    width: 240px;
+    top: 15px;
+    margin-left: 20px;
+  }
+
+  .projectStatus-container {
+    width: 400px;
+    top: 20px;
+    left: 20px;
+  }
+
+  .editInputLarge {
+    width: 180px;
+  }
+
+  .editProjectSkillsRequired-container {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .editProject-formChips {
+    width: 390px;
   }
 
 }

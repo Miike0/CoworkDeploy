@@ -33,18 +33,6 @@ const MenuProps_ = {
   },
 };
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  position: 'absolute',
-  width: 450,
-  bgcolor: '#212121',
-  p: 4,
-  borderRadius: '5px'
-};
-
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
     color: 'white',
@@ -104,20 +92,23 @@ function getStyles(name, chip, theme) {
 
 function EditProject(){
     const [open, setOpen] = useState(false);
-    const [imageUser, setImageUser] = useState(defaultProjectImage);
-    const [uploadUserImage, setUploadUserImage] = useState(null);
-    const [skills, setSkills] = useState([]);
+    const [projectImage, setProjectImage] = useState(defaultProjectImage);
+    const [uploadProjectImage, setUploadProjectImage] = useState(null);
     const theme = useTheme();
 
+    const [name, setName] = useState('');
+    const [projectStatus, setProjectStatus] = useState('');
+    const [projectDescription, setProjectDescription] = useState('');
+    const [projectMoreInfo, setProjectMoreInfo] = useState('');
+    const [skills, setSkills] = useState([]);
 
-
-    const handleChangeImageUser = (e) => {
+    const handleChangeProjectImage = (e) => {
       try {
-        setImageUser(URL.createObjectURL(e.target.files[0]));
-        setUploadUserImage(e.target.files[0].name);
+        setProjectImage(URL.createObjectURL(e.target.files[0]));
+        setUploadProjectImage(e.target.files[0].name);
 
       } catch (error) {
-        setImageUser(imageUser);
+        setProjectImage(projectImage);
       }
       
     }
@@ -131,6 +122,20 @@ function EditProject(){
       );
     };
 
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      const projectEditInfo = {
+        projectImage : uploadProjectImage,
+        skills : skills,
+        projectName : name,
+        projectStatus : projectStatus,
+        projectDescription : projectDescription,
+        projectMoreInfo : projectMoreInfo,
+      };
+      console.log(projectEditInfo)
+      //axios.post(API_URL + userInfo.userInfo, userInfo);
+    }
+
   return (
     <div>
         <IconButton onClick={() => setOpen(true)}> <EditIcon  className='editProject-icon' /> </IconButton>
@@ -139,17 +144,17 @@ function EditProject(){
             onClose={() => setOpen(false)}
 
         >
-            <Box style={style}>
-              <form className='editProject-container'>
+            <Box className='editProject-box'>
+              <form className='editProject-container' onSubmit={handleSubmit}>
                 <div className="editProjectName-container">
                   <div className="projectPhoto">
                     <Box className='imageContainer'>
                       <Button aria-label="upload picture" component="label" className='projectPhoto-imageBttn'>
-                        <input hidden accept="image/*" type="file" onChange={handleChangeImageUser}/>
-                        <img src={imageUser} alt="userIMage" className='projectPhoto-img'/>
+                        <input hidden accept="image/*" type="file" onChange={handleChangeProjectImage}/>
+                        <img src={projectImage} alt="userIMage" className='projectPhoto-img'/>
                       </Button>
                       <IconButton color="primary" aria-label="upload picture" component="label" className='projectPhoto-bttn'>
-                        <input hidden className='input-icon' accept="image/*" type="file" onChange={handleChangeImageUser}/>
+                        <input hidden className='input-icon' accept="image/*" type="file" onChange={handleChangeProjectImage}/>
                         <AddAPhotoIcon className='projectPhoto-icon'/>
                       </IconButton>
                     </Box>
@@ -163,6 +168,7 @@ function EditProject(){
                     InputLabelProps={{
                       style: { color: 'white' },
                     }}
+                    onChange={e => setName(e.target.value)}
                   />
                     
                 </div>
@@ -174,6 +180,7 @@ function EditProject(){
                         row
                         name="projectStatus-options"
                         className='projectStatus-optionsContainer'
+                        onChange={e => setProjectStatus(e.target.value)}
                       >
                         <FormControlLabel  className='projectStatus-lookingFor statusOption' value="Reclutando" control={<Radio sx={{'& .MuiSvgIcon-root' : { fontSize : 20 }, color: '#4098d3'}} />} label="Reclutando" />
                         <FormControlLabel className='projectStatus-inProgress statusOption' value="En progreso" control={<Radio sx={{'& .MuiSvgIcon-root' : { fontSize : 20 }, color: '#4098d3'}} />} label="En progreso" />
@@ -196,6 +203,7 @@ function EditProject(){
                     }}
                     multiline
                     rows={3}
+                    onChange={e => setProjectDescription(e.target.value)}
                   />
                   <CssTextField
                     className='aditionalInformationEdit editInputLarge'
@@ -210,6 +218,7 @@ function EditProject(){
                     }}
                     multiline
                     rows={3}
+                    onChange={e => setProjectMoreInfo(e.target.value)}
                   />
                 </div>
               
@@ -251,8 +260,8 @@ function EditProject(){
                 </div>
 
                 <div className="editProject-acept-reject">
-                  <Button variant='contained'>Aceptar</Button>
-                  <Button variant='outlined'>Cancelar</Button>
+                  <Button variant='contained' type='submit' >Aceptar</Button>
+                  <Button variant='outlined' onClick={() => setOpen(false)}>Cancelar</Button>
                 </div>
               </form>
             </Box>
