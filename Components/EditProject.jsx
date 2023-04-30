@@ -180,6 +180,7 @@ function EditProject(){
                         row
                         name="projectStatus-options"
                         className='projectStatus-optionsContainer'
+                        defaultValue='Reclutando'
                         onChange={e => setProjectStatus(e.target.value)}
                       >
                         <FormControlLabel  className='projectStatus-lookingFor statusOption' value="Reclutando" control={<Radio sx={{'& .MuiSvgIcon-root' : { fontSize : 20 }, color: '#4098d3'}} />} label="Reclutando" />
