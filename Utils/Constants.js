@@ -64,3 +64,5 @@ export const skillOptions = [
     { label: 'UI/UX', value: 'ui/ux' }
 ]
 export const GENERIC_TEXT = "Pasando a la década de 1960, el Lorem Ipsum fue popularizado por el fabricante de tipografía Letraset, que lo utilizó en sus campañas publicitarias. Letraset ofrecía páginas de Lorem Ipsum como hojas de transferencia, que fueron ampliamente utilizadas en la era anterior a los ordenadores para los diseños. Estas páginas de transferencia, conocidas como Letraset Body Type, se incluyeron en la publicidad de la compañía y en su popular catálogo."
+
+export const defaultProjectImage = 'https://cdn.discordapp.com/attachments/408479278175485952/1099539280428290138/dental-project-management-the-ultimate-guide.png';

@@ -808,6 +808,119 @@ projectDetailsimg {
   cursor: pointer;
 }
 
+/* Edit Project styles */
+.editProject-icon {
+  color:  var(--contrastColor);
+}
+.editProject-container {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 5px;
+}
+.editProjectName-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.projectPhoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+}
+
+.projectPhoto-imageBttn {
+  border-radius: 50%;
+}
+
+.projectPhoto-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.projectPhoto-bttn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 121px;
+  top: 16px;
+  border-radius: 50%;
+}
+.input-icon {
+  width: auto;
+  height: auto;
+}
+.projectPhoto-icon {
+  font-size: 25px;
+  color: var(--contrastColor);
+}
+.editProject-name-status {
+  display: flex;
+  flex-direction: column;
+}
+.projectName {
+  width: 250px;
+  top: 15px;
+  margin-left: 30px;
+}
+.aboutEditProject-container{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.editInputLarge {
+  width: 200px;
+}
+
+.editProject-formChips {
+  width: 410px;
+  margin: 20px;
+}
+
+.editProjectForm-boxChips {
+  height: 35px;
+  overflow-y: scroll;
+}
+
+.editProject-chips {
+  color: var(--colorText);
+  border: solid 1px var(--contrastColor);
+}
+
+.projectStatus-container {
+  width: 500px;
+  top: 20px;
+  left: 20px;
+
+}
+
+.projectStatus-label {
+  font-size: 20px;
+  color: var(--colorText);
+}
+
+.projectStatus-optionsContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.statusOption {
+  color: white;
+}
+
+.editProject-acept-reject {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
 
 @media (max-width: 768px) {
 
