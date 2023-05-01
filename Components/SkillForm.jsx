@@ -168,7 +168,7 @@ function SkillForm() {
         aboutMe : about,
         description : description,
       };
-      axios.post(API_URL + userInfo.userInfo, userInfo);
+      //axios.post(API_URL + userInfo.userInfo, userInfo);
     }
     return (
       <form className='skillForm-container' onSubmit={handleSubmit}>
@@ -233,7 +233,7 @@ function SkillForm() {
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
-                  onBlur={e => setName(e.target.value)}
+                  onChange={e => setName(e.target.value)}
                 />
                 <CssTextField 
                   className='skillForm-apellidos input names'
@@ -243,7 +243,7 @@ function SkillForm() {
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
-                  onBlur={e => setLastname(e.target.value)}
+                  onChange={e => setLastname(e.target.value)}
                 />
               </Box>
               <CssTextField
@@ -254,7 +254,7 @@ function SkillForm() {
                 InputLabelProps={{
                   style: { color: 'white' },
                 }}
-                onBlur={e => setLocation(e.target.value)}
+                onChange={e => setLocation(e.target.value)}
               />
               <CssTextField
                 className='skillForm-descripcion input input-large'
@@ -269,7 +269,7 @@ function SkillForm() {
                 }}
                 multiline
                 rows={2}
-                onBlur={e => setDescription(e.target.value)}
+                onChange={e => setDescription(e.target.value)}
               />
 
               <FormControl className='skillForm-formChips'>
@@ -320,7 +320,7 @@ function SkillForm() {
                 }}
                 multiline
                 rows={4}
-                onBlur={e => setPreviousExpertise(e.target.value)}
+                onChange={e => setPreviousExpertise(e.target.value)}
               />
               <CssTextField
                 className='skillForm-aboutU input input-large'
@@ -335,7 +335,7 @@ function SkillForm() {
                 }}
                 multiline
                 rows={4}
-                onBlur={e => setAbout(e.target.value)}
+                onChange={e => setAbout(e.target.value)}
 
               />
               <Button className='skillForm-beggins' variant="contained" type='submit'>Comenzar</Button>

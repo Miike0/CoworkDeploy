@@ -934,6 +934,154 @@ projectDetailsimg {
   margin-bottom: 10px;
 }
 
+/* User Settings styles */
+.userSettings-container {
+  margin-top: 80px;
+}
+.userSettings-backButton {
+  width: 200px;
+  margin-bottom: 20px;
+}
+.userSettings-backButton-bttn {
+  font-size: 20px;
+  color: var(--colorText);
+}
+.userSettings-backButton-icon {
+  font-size: 30px !important;
+  color: var(--contrastColor);
+}
+.userSettings-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.userSettings-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userSettings-myProfileTitle {
+  color: var(--colorText);
+  font-size: 32px;
+  align-self: flex-start;
+}
+.userSettings-myProfileT{
+  color: grey ;
+  font-size: 18px;
+  align-self: flex-start;
+}
+.userSettings-editUserImage {
+  width: 400px;
+  display: flex;
+}
+
+.userSettings-photoContainer {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.userSettingsPhoto-imageBttn {
+  border-radius: 50%;
+}
+
+.userSettingsPhoto-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userSettings-changeBttnsContainer{
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.userSettingsChangePhoto-bttn {
+  width: 150px;
+  height: 40px;
+}
+
+.userSettings-imageP {
+  font-size: 12px;
+  color: gray;
+  margin: 15px;
+  align-self: flex-start;
+
+}
+.userSettings-infoContainer {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.userSettings-input {
+  width: 350px;
+  margin: 15px;
+}
+.userSettings-autoComplete {
+  width: 350px;
+  margin: 15px;
+}
+.userSettings-formChips {
+  width: 350px;
+  margin: 15px;
+}
+
+.userSettings-boxChips {
+  height: 35px;
+  overflow-y: scroll;
+}
+
+.userSettings-chips {
+  color: var(--colorText);
+  border: solid 1px var(--contrastColor);
+}
+.userSettings-actionButtons {
+  width: 300px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-left: -80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.userSettings-desktopPhrase {
+  width: 550px;
+  display: flex;
+  flex-direction: row;
+}
+.userSettings-phraseContainer {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.settings-phraseTitle {
+  color: var(--contrastColor);
+  font-size: 22px;
+}
+.userSettings-phrase {
+  color: var(--colorText);
+  text-align: justify;
+  font-size: 15px;
+}
+.userSettings-phraseCharacter {
+  width: 250px;
+  height: 300px;
+}
+
 @media (max-width: 768px) {
 
   /*Login styles mobile*/
@@ -1316,6 +1464,15 @@ projectDetailsimg {
 
   .editProject-formChips {
     width: 390px;
+  }
+
+  /* User Settings Styles */
+
+  .userSettings-myProfileTitle {
+    font-size: 25px;
+  }
+  .userSettings-desktopPhrase {
+    display: none;
   }
 
 }

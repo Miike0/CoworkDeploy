@@ -22,14 +22,20 @@ const dataSet = {
     '¿Porque me piden habilidades o skills al momento de registrarme?' : 'Con la finalidad de mostrarles a los demas que es lo que sabes, por medio de tu perfil personal.',
     '¿Para que sirven las skills o habilidades que me piden al registarme?' : 'Con la finalidad de mostrarles a los demas que es lo que sabes, por medio de tu perfil personal.',
     '¿Que pasa sino tengo experiencia previa?' : ' No pasa nada!, simplemente escribe si has hecho algun proyecto personal, e incluso si no cuentas con eso no pasa nada, solo coloca algo que pienses que pueda describir lo que sabes.',
-    '¿Como puedo crear una publicacion?' : '',
-    '¿Que debe de llevar mi publicacion?' : '',
+    '¿Como puedo crear una publicacion?' : 'En la barra de navegacion se encuentra un icono de mas, solo da click a este y podrás crear una nueva publicación!',
+    '¿Que debe de llevar mi publicacion?' : 'Tu publicacion debe de llevar: una foto relevante del proyecto, nombre, descripcion, alguna información adicional y las skills que requieres para poder aplicar a ese proyecto.',
     '¿Para que sirve la información de mi perfil?' : 'Para que los demas usuarios de las plataformas conozcan quien eres y que haces',
     '¿Como puedo editar la informacion de mi perfil?' : 'Al estar activo en tu cuenta tendrás acceso a toda la plataforma, y siempre tendras a la barra de navegación, al dar clic sobre tu nombre o foto de perfil se te desplegará un menú, seleccionas Mi cuenta, y podras editar tu información.',
     '¿Como puedo editar mi perfil?' : 'Al estar activo en tu cuenta tendrás acceso a toda la plataforma, y siempre tendras a la barra de navegación, al dar clic sobre tu nombre o foto de perfil se te desplegará un menú, seleccionas Mi cuenta, y podras editar tu información.',
     '¿Como puedo contribuir a un proyecto?' : ' Dando clic sobre la publicación podrás comentar la publicación, o entrar a su perfil dando clic en su nombre y podrás ver su información de contacto.',
     '¿Como puedo contactar con el creador de una publicacion?' : 'Accediendo a su perfil, dando clic sobre el nombre o la foto del mismo, ahi encontrarás su información de contacto.',
     '¿Como funciona el sistema de recomendaciones?' : 'Funciona mediante el set de habilidades que se te piden cuando te registras en la plataforma, en base a estas se te recomiendan publicaciones.',
+    '¿Quien eres?' : 'Soy un bot que te ayuda a resolver tus dudas que tengas sobre la app',
+    'Que es el estatus en un proyecto?' : 'Es la etiqueta con la que puedes identificar si un proyecto esta reclutando personas, ya esta en proceso, o ya fue terminado.',
+    'Que es el estatus?' : 'Es la etiqueta con la que puedes identificar si un proyecto esta reclutando personas, ya esta en proceso, o ya fue terminado.',
+    'Estatus Reclutando' : 'Este estatus significa que esta reclutando personas para su proyecto',
+    'Estatus En progreso' : 'Este estatus significa que el proyecto ya se esta elaborando y posiblemente ya tiene a todas las personas necesarias, pero aun puedes mandar solicitud para probar suerte!',
+    'Estatus Finalizado' : 'Este estatus significa que el proyecto ya fue terminado y seguramente ya fue entregado',
   }
 
   export default dataSet;
