@@ -157,7 +157,7 @@ function SkillForm() {
     const handleSubmit = (event) => {
       event.preventDefault();
       const userInfo = {
-        userInfo : auth.currentUser.uid,
+        id : auth.currentUser.uid,
         avatar : uploadUserImage,
         firstname : name,
         lastname : lastName,
@@ -168,7 +168,7 @@ function SkillForm() {
         aboutMe : about,
         description : description,
       };
-      //axios.post(API_URL + userInfo.userInfo, userInfo);
+      axios.post(API_URL + 'skills', userInfo);
     }
     return (
       <form className='skillForm-container' onSubmit={handleSubmit}>
