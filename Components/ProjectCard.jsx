@@ -49,9 +49,9 @@ function ProjectCard(props) {
       >
         <div className="card">
           <div className="card-header px-4 pt-4">
-            <img className="card-project-img" src={project.data.image} alt="" />
-            <h5 className="card-title mb-0">{project.data.name}</h5>
-            <div className="badge bg-success my-2">{project.data.status}</div>
+            <img className="card-project-img" src={project.data?.image} alt="" />
+            <h5 className="card-title mb-0">{project.data?.name}</h5>
+            <div className="badge bg-success my-2">{project.data?.status}</div>
           </div>
           <div className="card-body px-4 pt-2">
             <p>{project.data.description}</p>

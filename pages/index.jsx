@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 
 import HomePage from "../Components/HomePage";
 import LoginPage from "../Components/LoginPage";
@@ -9,7 +9,13 @@ export default function index() {
   const [user, setUser] = useState(undefined);
   useEffect(() => {
     onAuthStateChanged(setUser);
+
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(user))
+  }, [user])
+  
 
   return (
     <div>

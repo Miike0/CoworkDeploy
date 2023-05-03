@@ -23,6 +23,8 @@ export default function NavBar({ user }) {
     setAnchorEl(null);
   };
   const router = useRouter();
+  console.log('data', JSON.parse(localStorage.getItem('user')));
+  const userdata = user || JSON.parse(localStorage.getItem('user'));
   return (
     <Navbar collapseOnSelect expand="lg" className="navigation-Bar">
       <Navbar.Brand href="#home" className="navBrand">
@@ -53,9 +55,9 @@ export default function NavBar({ user }) {
           onClick={handleClick}
         >
           <div className="d-flex flex-row align-items-center">
-            <Avatar alt="user img" src={user?.avatar || null} />
+            <Avatar alt="user img" src={userdata?.avatar || null} />
             <h5 className="d-none d-xl-block ms-xl-2 me-xl-4 mt-2 ">
-              {user?.username || 'Unknow User'}
+              {userdata?.username || 'Unknow User'}
             </h5>
           </div>
         </Button>
@@ -72,7 +74,7 @@ export default function NavBar({ user }) {
             onClick={() => {
               router.push({
                 pathname: '/userProfile',
-                query: { id: user.uid },
+                query: { id: userdata.uid },
               });
             }}
           >
