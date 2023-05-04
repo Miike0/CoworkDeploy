@@ -27,7 +27,7 @@ function Profile({ user }) {
             ></Avatar>
           </Col>
           <Col xs={9} className="profile-about-me">
-            <span className="profile-about-me-name">{user.username}</span>
+            <span className="profile-about-me-name">{user.firstname ? `${user.firstname} ${user.lastname}`:user.username}</span>
             <p className="profile-about-me-description">
               {user.aboutMe || 'Este usuario aún no tiene descripción'}
             </p>
