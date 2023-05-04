@@ -18,12 +18,12 @@ function AboutMe({ user }) {
           <p className="aboutMe-me-content text">{user.aboutMe}</p>
         </div>
       )}
-      <Button
+      {/* <Button
         endIcon={<ExpandCircleDownOutlinedIcon className="btn-icon" />}
         className="btn-readMore"
       >
         Leer más
-      </Button>
+      </Button> */}
     </div>
   );
 }

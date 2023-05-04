@@ -302,7 +302,9 @@ function SkillForm() {
                 }}
                 inputProps={{
                   style: { color: 'white' },
+                  maxLength: 150,
                 }}
+                placeholder='Máximo 150 caracteres'
                 multiline
                 rows={2}
                 onChange={e => setDescription(e.target.value)}

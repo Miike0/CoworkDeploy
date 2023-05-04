@@ -400,7 +400,7 @@ body {
 }
 
 .profile-about-avatar-img {
-  position: absolute;
+  position: absolute !important;
   top: 120px;
   left: 50px;
 }
@@ -539,7 +539,7 @@ body {
 }
 
 .chip {
-  color: var(--colorText);
+  color: var(--colorText) !important;
   margin: 4px;
 }
 
@@ -1265,8 +1265,8 @@ body {
   }
 
   .profile-about-avatar-img {
-    width: 100px;
-    height: 100px;
+    width: 100px !important;
+    height: 100px !important;
     position: absolute;
     top: 130px;
     left: 20px;
@@ -1277,9 +1277,19 @@ body {
     left: 20px;
     top: 230px;
   }
-
+  
   .profile-about-me-description {
     overflow-y: hidden;
+  }
+
+  .aboutMe-experience{
+    position: relative;
+    margin-top: 120px;
+  }
+  .aboutMe-me  {
+  }
+
+  .aboutMe-experience-title {
   }
 
   .profile-about-me-name {
@@ -1287,7 +1297,7 @@ body {
   }
 
   .profile-actions {
-    top: 150px;
+    top: 280px;
     left: -60px;
     display: flex;
   }
@@ -1296,6 +1306,7 @@ body {
     width: 20px;
     height: 30px;
     margin-right: 10px;
+    color: var(--contrastColor);
   }
 
   .profile-actions-message-btn {
@@ -1310,6 +1321,10 @@ body {
     height: 30px;
     margin-right: 10px;
 
+  }
+
+  .generalData-skills-addButton-icon {
+    color: var(--contrastColor);
   }
 
   /* AboutMe componet */
