@@ -146,11 +146,6 @@ function UserSettings() {
   const [userImageURL, setUserImageURL] = useState(null);
   const [isloading, setisloading] = useState(false);
 
-  useEffect(() => {
-    setUserData(JSON.parse(localStorage.getItem('userdata')) || getUserInfo());
-    const userinfo = JSON.parse(localStorage.getItem('user'));
-    setUid(userinfo.uid || auth.currentUser.uid);
-  }, []);
 
   useEffect(() => {
     console.log('ssss', userData);
@@ -170,6 +165,14 @@ function UserSettings() {
       setisloading(false);
     }
   }, [uploadUserImage]);
+
+
+  useEffect(() => {
+    if(auth.currentUser.uid)
+      getUserInfo()
+  
+  }, [auth.currentUser.uid])
+  
   const handleChangeUserImage = (e) => {
     try {
       const selectedImage = e.target.files[0];
@@ -202,10 +205,10 @@ function UserSettings() {
   };
 
   const getUserInfo = async () => {
-    if (uid) {
+    if (auth.currentUser.uid) {
       try {
-        const res = await axios.get(API_URL + 'user?id=' + uid);
-        return res.data.data;
+        const res = await axios.get(API_URL + 'user?id=' + auth.currentUser.uid);
+        setUserData(res.data.data) ;
       } catch (err) {
         console.log('error', err);
       }

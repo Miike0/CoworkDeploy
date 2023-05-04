@@ -20,7 +20,6 @@ export default function index() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('user', JSON.stringify(user));
     setIsLoading(true);
     if (user) {
       getUserInfo();
@@ -29,7 +28,6 @@ export default function index() {
   }, [user]);
 
   useEffect(() => {
-    localStorage.setItem('userdata', JSON.stringify(userData));
     if (userData && userData.college === '' || userData?.college === 'CUCEI' ) {
       router.push({
         pathname: '/skills',
