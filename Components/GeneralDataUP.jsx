@@ -13,7 +13,9 @@ function GeneralDataUP({ user }) {
           <div className="generalData-skills-chips">
             <Stack direction="row" spacing={1} className="chips-container">
               {user.skills.map((skill) => {
-                <Chip label={skill} variant="outlined" className="chip" />;
+                return(
+                  <Chip label={skill} variant="outlined" className="chip" />
+                )
               })}
             </Stack>
 

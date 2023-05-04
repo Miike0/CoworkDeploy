@@ -16,7 +16,10 @@ import { alpha, styled } from '@mui/material/styles';
 import Checkbox from '@mui/material/Checkbox';
 import { coWorkLogo, skillsValues, udgCampus, userAvatarDefault, API_URL} from '../Utils/Constants';
 import axios from 'axios';
-import { auth } from '../Utils/firebase';
+import { auth, storage } from '../Utils/firebase';
+import { useRouter } from 'next/router';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const ITEM_HEIGHT = 48;
@@ -133,17 +136,9 @@ function SkillForm() {
     const [uploadUserImage, setUploadUserImage] = useState(null);
     const theme = useTheme();
     const [skills, setSkills] = useState([]);
-
-    const handleChangeImageUser = (e) => {
-      try {
-        setImageUser(URL.createObjectURL(e.target.files[0]));
-        setUploadUserImage(e.target.files[0].name);
-
-      } catch (error) {
-        setImageUser(imageUser);
-      }
-      
-    }
+    const [userImageURL, setUserImageURL] = useState(null);
+    const [isloading, setisloading] = useState(false);
+    const router = useRouter()
 
     const handleChangeSkill = (event) => {
       const {
@@ -153,12 +148,51 @@ function SkillForm() {
         typeof value === 'string' ? value.split(',') : value,
       );
     };
+    useEffect(() => {
+      if (uploadUserImage) {
+        setisloading(true);
+        setUploadUserImage(uploadUserImage);
+        handleImageUpload();
+        setisloading(false);
+      }
+    }, [uploadUserImage]);
 
+    const handleChangeImageUser = (e) => {
+      try {
+        const selectedImage = e.target.files[0];
+        if (!selectedImage) {
+          setImageUser(null);
+          return;
+        }
+        setImageUser(URL.createObjectURL(selectedImage));
+        setUploadUserImage(selectedImage);
+      } catch (error) {
+        setImageUser(null);
+      }
+    }
+
+    const handleImageUpload = () => {
+      try {
+        setisloading(true);
+        if (uploadUserImage == null) return;
+        const imageRef = ref(storage, `projectImages/${uuidv4()}`);
+        uploadBytes(imageRef, uploadUserImage).then((snapshot) => {
+          getDownloadURL(imageRef).then((snapshot) => {
+            setUserImageURL(snapshot);
+            setisloading(false);
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
     const handleSubmit = (event) => {
+      console.log('iurr', userImageURL);
       event.preventDefault();
       const userInfo = {
         id : auth.currentUser.uid,
-        avatar : uploadUserImage,
+        avatar : userImageURL,
         firstname : name,
         lastname : lastName,
         college : universityCenter,
@@ -167,8 +201,10 @@ function SkillForm() {
         experience : previousExpertise,
         aboutMe : about,
         description : description,
+        username: `${name} ${lastName}`
       };
       axios.post(API_URL + 'skills', userInfo);
+      router.push('/')
     }
     return (
       <form className='skillForm-container' onSubmit={handleSubmit}>
