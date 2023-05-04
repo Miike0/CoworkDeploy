@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from '@mui/material/Button';
-import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
+import SettingsIcon from '@mui/icons-material/Settings';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import Avatar from '@mui/material/Avatar';
 import { auth } from '../Utils/firebase';
@@ -34,12 +34,12 @@ function Profile({ user }) {
           </Col>
           <Col md="auto" className="profile-actions">
             <Col md="4" className="profile-actions-more">
-              {user.email === auth.currentUser.email && (
+              {user?.email === auth.currentUser.email && (
                 <Button
-                  variant="outlined"
+                  variant="text"
                   className="profile-actions-more-btn button"
                 >
-                  <MoreHorizOutlinedIcon fontSize="medium" />
+                  <SettingsIcon fontSize="medium" />
                 </Button>
               )}
             </Col>
