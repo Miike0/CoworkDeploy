@@ -5,6 +5,7 @@ import axios from 'axios';
 import UserAvatar from './UserAvatar';
 import { Button } from 'react-bootstrap';
 import { API_URL } from '../Utils/Constants.js';
+import { auth } from '../Utils/firebase';
 
 function ProjectTeam(props) {
   const members = Object.values(props.members || []);
@@ -36,6 +37,7 @@ function ProjectTeam(props) {
           onClick={() => {
             props.setShowJoinRequestModal(true);
           }}
+          hidden={members.includes(auth.currentUser.uid)}
         >
           Unirme al proyecto
         </Button>

@@ -6,6 +6,7 @@ import { API_URL } from '../Utils/Constants';
 import ProjectDescription from '../Components/ProjectDescription';
 import ProjectTeam from '../Components/ProjectTeam';
 import { Button, Modal } from 'react-bootstrap';
+import { auth } from '../Utils/firebase';
 
 function ProjectDetails(props) {
   const [project, setProject] = useState();
@@ -41,7 +42,7 @@ function ProjectDetails(props) {
   }, [loading]);
 
   useEffect(() => {
-    console.log({ project, user });
+    //console.log({ project, user });
     if (project && user && userID && projectID) isLoading(false);
   }, [project, user, userID, projectID]);
 
@@ -50,7 +51,11 @@ function ProjectDetails(props) {
       requester: userID,
       project: projectID,
     });
-
+    await axios.post(API_URL +'notifications',{
+      id:project?.owner,
+      generatedBy:auth.currentUser.uid,
+      project:projectID,
+    })
     setSendNotificationModalShown(false);
   };
 
