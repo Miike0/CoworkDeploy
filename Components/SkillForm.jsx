@@ -17,6 +17,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { coWorkLogo, skillsValues, udgCampus, userAvatarDefault, API_URL} from '../Utils/Constants';
 import axios from 'axios';
 import { auth } from '../Utils/firebase';
+import { useRouter } from 'next/router';
 
 
 const ITEM_HEIGHT = 48;
@@ -133,7 +134,7 @@ function SkillForm() {
     const [uploadUserImage, setUploadUserImage] = useState(null);
     const theme = useTheme();
     const [skills, setSkills] = useState([]);
-
+    const router = useRouter()
     const handleChangeImageUser = (e) => {
       try {
         setImageUser(URL.createObjectURL(e.target.files[0]));
@@ -167,8 +168,10 @@ function SkillForm() {
         experience : previousExpertise,
         aboutMe : about,
         description : description,
+        username: `${name} ${lastName}`
       };
       axios.post(API_URL + 'skills', userInfo);
+      router.push('/')
     }
     return (
       <form className='skillForm-container' onSubmit={handleSubmit}>

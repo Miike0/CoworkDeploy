@@ -25,7 +25,7 @@ function ProjectCard(props) {
       setIsLoading(false);
     };
 
-    if (project.data.members) {
+    if (project?.data?.members) {
       getMembers();
     }
   }, []);

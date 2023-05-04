@@ -6,10 +6,13 @@ import { onAuthStateChanged } from "../Utils/firebase";
 import ChatbotComponent from '../Components/ChatBotComponent';
 import axios from "axios";
 import { API_URL } from "../Utils/Constants";
+import { useRouter } from "next/router";
 
 export default function index() {
   const [user, setUser] = useState(undefined);
   const [userData, setUserData] = useState(undefined);
+  const [loading, setIsLoading] = useState(false)
+  const router = useRouter();
 
   useEffect(() => {
     onAuthStateChanged(setUser);
@@ -19,10 +22,19 @@ export default function index() {
   useEffect(() => {
     localStorage.setItem('user', JSON.stringify(user))
     console.log('datos de usuario',user);
+    setIsLoading(true)
     if(user){
       getUserInfo();
-    }
+      if(userData && userData.location === ''){
+         router.push({
+          pathname: '/skills',
+          query: { id: user.uid },
+        });  
 
+      }
+   
+    }
+    setIsLoading(false)
   }, [user])
   
   const getUserInfo = async () => {
@@ -31,10 +43,10 @@ export default function index() {
       try {
         const res = await axios.get(API_URL + 'user?id=' + user?.uid);
         setUserData(res.data.data);
-        
+        console.log('dataaaa',userData);
 
       } catch (err) {
-        console.log('error papi',err);
+        console.log('error',err);
       }
     }
   };
@@ -42,7 +54,7 @@ export default function index() {
     <div>
       
     {user === null && <LoginPage/>} 
-    {user && <HomePage userData={user}/>}
+    {user && !loading && <HomePage userData={user}/>}
       <ChatbotComponent />
     
   </div>
