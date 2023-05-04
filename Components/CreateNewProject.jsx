@@ -1,32 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Button,
-  Chip,
-  Modal,
-  TextField,
-  Box,
-  Typography,
-  IconButton,
-  CircularProgress,
-} from '@mui/material';
+import { Button, Modal, TextField, Box, CircularProgress } from '@mui/material';
 
 import AddIcon from '@mui/icons-material/Add';
 import Select from 'react-select';
-import {
-  API_URL,
-  skillOptions,
-  skillsValues,
-  userAvatarDefault,
-} from '../Utils/Constants';
-import { BorderColor } from '@mui/icons-material';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import { API_URL, skillOptions } from '../Utils/Constants';
 import axios from 'axios';
 import { auth, storage } from '../Utils/firebase';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-import Paper from '@mui/material/Paper';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
 import { useRouter } from 'next/router';
@@ -129,11 +112,11 @@ const CreateNewProject = ({ isOpen, onClose }) => {
   const handleClose = () => {
     setOpen(false);
     setName('');
-    setDescription('')
-    setAdditionalInfo('')
-    setSkills([])
-    setSelectedOptions([])
-    handleReset()
+    setDescription('');
+    setAdditionalInfo('');
+    setSkills([]);
+    setSelectedOptions([]);
+    handleReset();
   };
   const [activeStep, setActiveStep] = React.useState(0);
   const [imageUser, setImageUser] = useState(
