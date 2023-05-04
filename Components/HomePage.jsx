@@ -5,6 +5,8 @@ import SeachFilters from '../Components/SeachFilters';
 import ProjectCard from '../Components/ProjectCard';
 import { Row } from 'react-bootstrap';
 import { API_URL } from '../Utils/Constants.js';
+import NoticeOfPrivacyModal from './NoticeOfPrivacyModal';
+
 
 export default function HomePage({ userData }) {
   const [allProjects, setAllProjects] = useState([]);
@@ -69,25 +71,30 @@ export default function HomePage({ userData }) {
   return isLoading ? (
     <div>Loading...</div>
   ) : (
-    <div>
-      <NavBar user={userData} />
-      <div className="d-flex flex-column justify-content-center mx-auto mt-4">
-        <SeachFilters filters={filters} onSearch={searchHandler} />
-        <div className="card-container ">
-          <Row>
-            {sortedProjects.length > 0 &&
-              sortedProjects.map((project) => {
-                return (
-                  <ProjectCard
-                    key={project[0]?.id}
-                    project={project[0]}
-                    userData={userData}
-                  />
-                );
-              })}
-          </Row>
+    <>
+      <div>
+        <NavBar user={userData} />
+        <div className="d-flex flex-column justify-content-center mx-auto mt-4">
+          <SeachFilters filters={filters} onSearch={searchHandler} />
+          <div className="card-container ">
+            <Row>
+              {sortedProjects.length > 0 &&
+                sortedProjects.map((project) => {
+                  return (
+                    <ProjectCard
+                      key={project[0]?.id}
+                      project={project[0]}
+                      userData={userData}
+                    />
+                  );
+                })}
+            </Row>
+          </div>
         </div>
       </div>
-    </div>
+      <footer className='hp-footer-privacy'>
+        <NoticeOfPrivacyModal/> 
+      </footer>
+    </>
   );
 }
