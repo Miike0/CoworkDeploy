@@ -19,6 +19,8 @@ import {
   signInWithEmail,
 } from '../Utils/firebase';
 import { useState } from 'react';
+import NoticeOfPrivacyModal from './NoticeOfPrivacyModal';
+
 
 function loginForm() {
   const [email, setemail] = useState('');
@@ -133,6 +135,7 @@ function loginForm() {
             />
           </IconButton>
         </div>
+        <NoticeOfPrivacyModal/>
       </div>
     </div>
   );

@@ -20,6 +20,7 @@ import { auth, storage } from '../Utils/firebase';
 import { useRouter } from 'next/router';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
+import NoticeOfPrivacyModal from './NoticeOfPrivacyModal';
 
 
 const ITEM_HEIGHT = 48;
@@ -376,6 +377,7 @@ function SkillForm() {
 
               />
               <Button className='skillForm-beggins' variant="contained" type='submit'>Comenzar</Button>
+              <NoticeOfPrivacyModal/>
             </div>
           </div>
       </form>
