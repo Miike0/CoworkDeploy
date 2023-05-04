@@ -7,8 +7,12 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import Avatar from '@mui/material/Avatar';
 import { auth } from '../Utils/firebase';
+import { useRouter } from 'next/router';
+
 
 function Profile({ user }) {
+  const router = useRouter();
+
   return (
     <div className="profile-container">
       <img
@@ -39,7 +43,21 @@ function Profile({ user }) {
                   variant="text"
                   className="profile-actions-more-btn button"
                 >
-                  <SettingsIcon fontSize="medium" />
+                  <SettingsIcon 
+                    fontSize="medium" 
+                    onClick={
+                      () => {
+                        sessionStorage.setItem('userID', user.id);
+                        router.push(
+                          {
+                            pathname: '/Settings',
+                            query: { user: user.uid },
+                          },
+                          '/Settings',
+                        );
+                      }
+                    }
+                  />
                 </Button>
               )}
             </Col>
