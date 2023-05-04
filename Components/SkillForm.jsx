@@ -188,7 +188,6 @@ function SkillForm() {
     };
   
     const handleSubmit = (event) => {
-      console.log('iurr', userImageURL);
       event.preventDefault();
       const userInfo = {
         id : auth.currentUser.uid,

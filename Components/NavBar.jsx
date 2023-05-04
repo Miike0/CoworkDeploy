@@ -41,23 +41,21 @@ export default function NavBar({ user }) {
   };
   useEffect(() => {
     getNotifications();
-/*     const interval = setInterval(() => {
+    /*     const interval = setInterval(() => {
       getNotifications();
     }, 600000000000000); */
-/*     return () => clearInterval(interval); */
+    /*     return () => clearInterval(interval); */
   }, []);
 
   const getNotifications = async () => {
     await axios
       .get(API_URL + 'notifications?id=' + auth.currentUser.uid)
       .then((res) => {
-        console.log('res', res.data);
         setUserNotifications(res.data.notifications);
       });
   };
   const router = useRouter();
-  console.log('data', JSON.parse(localStorage.getItem('user')));
-  const userdata = user || JSON.parse(localStorage.getItem('user'));
+  const userdata = JSON.parse(localStorage.getItem('userdata')) || user;
   return (
     <Navbar collapseOnSelect expand="lg" className="navigation-Bar">
       <Navbar.Brand href="#home" className="navBrand">
@@ -74,7 +72,7 @@ export default function NavBar({ user }) {
         navbarScroll
       >
         <div className="d-flex flex-row justify-content-around ">
-          <HomeIcon className="icon" sx={{ fontSize: 40 }} />
+          <HomeIcon onClick={()=> router.push('/')} className="icon" sx={{ fontSize: 40 }} />
           <WorkIcon className="icon" sx={{ fontSize: 40 }} />
           <div>
             <Badge badgeContent={userNotifications?.length} color="primary">
@@ -180,14 +178,14 @@ export default function NavBar({ user }) {
                   })
                 ) : (
                   <span
-                  style={{
-                    color: '#dddddd',
-                    marginTop: '0.1rem',
-                  }}
-                  className="mx-2 mb-2"
-                >
-                  {`No hay notificaciones `}
-                </span>
+                    style={{
+                      color: '#dddddd',
+                      marginTop: '0.1rem',
+                    }}
+                    className="mx-2 mb-2"
+                  >
+                    {`No hay notificaciones `}
+                  </span>
                 )}
               </div>
             </Popover>
@@ -206,7 +204,8 @@ export default function NavBar({ user }) {
           <div className="d-flex flex-row align-items-center">
             <Avatar alt="user img" src={userdata?.avatar || null} />
             <h5 className="d-none d-xl-block ms-xl-2 me-xl-4 mt-2 ">
-              {userdata?.username || 'Unknow User'}
+              {`${userdata.firstname} ${userdata.lastname}` ||
+                userdata?.username}
             </h5>
           </div>
         </Button>
@@ -223,14 +222,21 @@ export default function NavBar({ user }) {
             onClick={() => {
               router.push({
                 pathname: '/userProfile',
-                query: { id: userdata.uid },
-              });
+                query: { id: auth.currentUser.uid },
+              })
             }}
           >
             Profile
           </MenuItem>
           <MenuItem onClick={handleClose}>My account</MenuItem>
-          <MenuItem onClick={() => logOut()}>Logout</MenuItem>
+          <MenuItem
+            onClick={() => {
+              router.push('/')
+              logOut();
+            }}
+          >
+            Logout
+          </MenuItem>
         </Menu>
       </Nav>
     </Navbar>
