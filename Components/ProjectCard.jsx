@@ -31,7 +31,7 @@ function ProjectCard(props) {
   }, []);
 
   return (
-    <Col xl={4} lg={4} md={6} sm={12} className="my-2 card-container2">
+    <Col xl={4} lg={6} md={12} sm={12} className="my-2 card-container2">
       {project && (
         <a
           onClick={() => {

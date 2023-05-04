@@ -29,6 +29,7 @@ import StepContent from '@mui/material/StepContent';
 import Paper from '@mui/material/Paper';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
+import { useRouter } from 'next/router';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -42,7 +43,7 @@ const style = {
   bgcolor: '#212121',
   bgcolor: '#212121',
   p: 4,
-  borderRadius: '5px'
+  borderRadius: '5px',
 };
 
 const proyectImgStyle = {
@@ -125,7 +126,15 @@ const CreateNewProject = ({ isOpen, onClose }) => {
   const [skills, setSkills] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setName('');
+    setDescription('')
+    setAdditionalInfo('')
+    setSkills([])
+    setSelectedOptions([])
+    handleReset()
+  };
   const [activeStep, setActiveStep] = React.useState(0);
   const [imageUser, setImageUser] = useState(
     'https://cdn.discordapp.com/attachments/408479278175485952/1099539280428290138/dental-project-management-the-ultimate-guide.png',
@@ -134,6 +143,8 @@ const CreateNewProject = ({ isOpen, onClose }) => {
   const [image, setImage] = useState();
   const [userImageURL, setUserImageURL] = useState(null);
   const [isloading, setisloading] = useState(false);
+  const router = useRouter();
+
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -196,14 +207,23 @@ const CreateNewProject = ({ isOpen, onClose }) => {
       name: name,
       description: description,
       skills: skills,
+      additionalInfo: additionalInfo,
       owner: auth.currentUser.uid,
       image: userImageURL,
-      status: 'Reclutando'
-    };
-    axios.post(API_URL + 'project', projectData);
-    setisloading(false);
 
-    handleClose();
+      status: 'Reclutando',
+    };
+    axios.post(API_URL + 'project', projectData).then((res) => {
+      handleClose();
+      router.push(
+        {
+          pathname: '/ProjectDetails',
+          query: { id: res.data.projectID, user: auth.currentUser.uid },
+        },
+        '/ProjectDetails',
+      );
+    });
+    setisloading(false);
   };
   return (
     <div>
@@ -265,7 +285,7 @@ const CreateNewProject = ({ isOpen, onClose }) => {
                       variant="contained"
                       onClick={handleNext}
                       sx={{ mt: 1, mr: 1 }}
-                      disabled={isloading}
+                      disabled={isloading || !name}
                     >
                       {'Siguiente'}
                     </Button>
@@ -317,11 +337,13 @@ const CreateNewProject = ({ isOpen, onClose }) => {
                       variant="contained"
                       onClick={handleNext}
                       sx={{ mt: 1, mr: 1 }}
+                      disabled={!additionalInfo || !description}
                     >
                       {'Siguiente'}
                     </Button>
                     <Button onClick={handleBack} sx={{ mt: 1, mr: 1 }}>
-                    {'Regresar'}                    </Button>
+                      {'Regresar'}{' '}
+                    </Button>
                   </div>
                 </Box>
               </StepContent>
@@ -333,7 +355,7 @@ const CreateNewProject = ({ isOpen, onClose }) => {
               </StepLabel>
               <StepContent>
                 <Box sx={{ mb: 2 }}>
-                  <div className='d-flex flex-column'>
+                  <div className="d-flex flex-column">
                     <div style={{ marginTop: '1rem' }}>
                       <Select
                         styles={customStyles}
@@ -350,6 +372,7 @@ const CreateNewProject = ({ isOpen, onClose }) => {
                       variant="contained"
                       onClick={handleSubmit}
                       sx={{ mt: 1, mr: 1 }}
+                      disabled={!skills.length}
                     >
                       {'Crear Proyecto'}
                     </Button>
