@@ -19,12 +19,12 @@ function GeneralDataUP({ user }) {
               })}
             </Stack>
 
-            <IconButton className="generalData-skills-addButton" size="large">
+            {/* <IconButton className="generalData-skills-addButton" size="large">
               <AddCircleSharpIcon
                 fontSize="large"
                 className="generalData-skills-addButton-icon"
               />
-            </IconButton>
+            </IconButton> */}
           </div>
         </>
       )}
