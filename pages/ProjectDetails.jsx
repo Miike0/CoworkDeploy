@@ -42,7 +42,6 @@ function ProjectDetails(props) {
   }, [loading]);
 
   useEffect(() => {
-    //console.log({ project, user });
     if (project && user && userID && projectID) isLoading(false);
   }, [project, user, userID, projectID]);
 

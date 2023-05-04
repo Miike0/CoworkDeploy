@@ -31,8 +31,11 @@ function ProjectCard(props) {
   }, []);
 
   return (
-    <Col xl={4} lg={6} md={12} sm={12} className="my-2 card-container2">
-      {project && (
+    <>
+    {project && (
+  
+    <Col xl={4} lg={4} md={6} sm={12} className="my-2 card-container2">
+
         <a
           onClick={() => {
             sessionStorage.setItem('projectID', project.id);
@@ -81,8 +84,11 @@ function ProjectCard(props) {
             <div></div>
           </div>
         </a>
-      )}
+
     </Col>
+    
+    )}
+    </>
   );
 }
 

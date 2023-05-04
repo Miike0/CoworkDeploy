@@ -47,13 +47,13 @@ function Profile({ user }) {
                     fontSize="medium" 
                     onClick={
                       () => {
-                        sessionStorage.setItem('userID', user.id);
+                        sessionStorage.setItem('userID', auth.currentUser.uid);
                         router.push(
                           {
                             pathname: '/Settings',
-                            query: { user: user.uid },
+                            query: { id: auth.currentUser.uid },
                           },
-                          '/Settings',
+                          
                         );
                       }
                     }
