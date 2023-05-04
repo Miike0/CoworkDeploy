@@ -31,7 +31,7 @@ function ProjectCard(props) {
   }, []);
 
   return (
-    <Col xl={3} lg={4} md={6} sm={12} className="my-2 card-container2">
+    <Col xl={4} lg={4} md={6} sm={12} className="my-2 card-container2">
       <a
         onClick={() => {
           sessionStorage.setItem('projectID', project.id);
@@ -54,7 +54,9 @@ function ProjectCard(props) {
             <div className="badge bg-success my-2">{project.data.status}</div>
           </div>
           <div className="card-body px-4 pt-2">
-            <p>{project.data.description}</p>
+            <div className="card-body_description px-4 pt-2">
+              <p>{project.data.description}</p>
+            </div>
 
             <div className="d-flex justify-content-center">
               {!isLoading &&
