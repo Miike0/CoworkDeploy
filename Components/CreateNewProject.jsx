@@ -198,6 +198,7 @@ const CreateNewProject = ({ isOpen, onClose }) => {
       skills: skills,
       owner: auth.currentUser.uid,
       image: userImageURL,
+      status: 'Reclutando'
     };
     axios.post(API_URL + 'project', projectData);
     setisloading(false);

@@ -1,17 +1,17 @@
-import React, { use, useEffect, useState } from "react";
+import React, { use, useEffect, useState } from 'react';
 
-import HomePage from "../Components/HomePage";
-import LoginPage from "../Components/LoginPage";
-import { onAuthStateChanged } from "../Utils/firebase";
+import HomePage from '../Components/HomePage';
+import LoginPage from '../Components/LoginPage';
+import { onAuthStateChanged } from '../Utils/firebase';
 import ChatbotComponent from '../Components/ChatBotComponent';
-import axios from "axios";
-import { API_URL } from "../Utils/Constants";
-import { useRouter } from "next/router";
+import axios from 'axios';
+import { API_URL } from '../Utils/Constants';
+import { useRouter } from 'next/router';
 
 export default function index() {
   const [user, setUser] = useState(undefined);
   const [userData, setUserData] = useState(undefined);
-  const [loading, setIsLoading] = useState(false)
+  const [loading, setIsLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -20,43 +20,37 @@ export default function index() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('user', JSON.stringify(user))
-    console.log('datos de usuario',user);
-    setIsLoading(true)
-    if(user){
+    localStorage.setItem('user', JSON.stringify(user));
+    setIsLoading(true);
+    if (user) {
       getUserInfo();
-      if(userData && userData.location === ''){
-         router.push({
-          pathname: '/skills',
-          query: { id: user.uid },
-        });  
-
-      }
-   
     }
-    setIsLoading(false)
-  }, [user])
-  
+    setIsLoading(false);
+  }, [user]);
+
+  useEffect(() => {
+    if (userData && userData.college === '') {
+      router.push({
+        pathname: '/skills',
+        query: { id: user.uid },
+      });
+    }
+  }, [userData]);
   const getUserInfo = async () => {
-    console.log('aberts',user?.uid);
     if (user?.uid) {
       try {
         const res = await axios.get(API_URL + 'user?id=' + user?.uid);
         setUserData(res.data.data);
-        console.log('dataaaa',userData);
-
       } catch (err) {
-        console.log('error',err);
+        console.log('error', err);
       }
     }
   };
   return (
     <div>
-      
-    {user === null && <LoginPage/>} 
-    {user && !loading && <HomePage userData={user}/>}
+      {user === null && <LoginPage />}
+      {user && !loading && <HomePage userData={user} />}
       <ChatbotComponent />
-    
-  </div>
+    </div>
   );
 }
