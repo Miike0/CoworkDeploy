@@ -6,6 +6,7 @@ import UserAvatar from './UserAvatar';
 import { Button } from 'react-bootstrap';
 import { API_URL } from '../Utils/Constants.js';
 import { auth } from '../Utils/firebase';
+import { useRouter } from 'next/router';
 
 function ProjectTeam(props) {
   const members = Object.values(props.members || []);
@@ -13,6 +14,8 @@ function ProjectTeam(props) {
 
   const [membersFetched, setMembersFetched] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+
 
   useEffect(() => {
     const getMembers = async () => {
@@ -48,11 +51,20 @@ function ProjectTeam(props) {
           !isLoading &&
           membersFetched.map((member) => {
             return (
+              <div onClick={()=> {
+                console.log('member id', member.id);
+                 router.push({
+                  pathname: '/userProfile',
+                  query: { id: member.id },
+                }) 
+              }}>
               <UserAvatar
                 key={member.id}
                 image={member.data.avatar}
                 name={member.data.username}
               />
+              </div>
+
             );
           })}
       </div>

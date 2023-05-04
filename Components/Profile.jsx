@@ -63,7 +63,7 @@ function Profile({ user }) {
             </Col>
             {user.email != auth.currentUser.email && (
               <div className='d-flex justify-content-around'>
-                <Col md="5" className="profile-actions-message">
+{/*                 <Col md="5" className="profile-actions-message">
                   <Button
                     variant="outlined"
                     className="profile-actions-message-btn button"
@@ -79,7 +79,7 @@ function Profile({ user }) {
                   >
                     Seguir
                   </Button>
-                </Col>
+                </Col> */}
               </div>
             )}
           </Col>

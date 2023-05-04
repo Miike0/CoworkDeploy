@@ -29,7 +29,8 @@ export default function index() {
   }, [user]);
 
   useEffect(() => {
-    if (userData && userData.college === '') {
+    localStorage.setItem('userdata', JSON.stringify(userData));
+    if (userData && userData.college === '' || userData?.college === 'CUCEI' ) {
       router.push({
         pathname: '/skills',
         query: { id: user.uid },
@@ -49,7 +50,7 @@ export default function index() {
   return (
     <div>
       {user === null && <LoginPage />}
-      {user && !loading && <HomePage userData={user} />}
+      {user && !loading && <HomePage userData={user} navbarData={userData}/>}
       <ChatbotComponent />
     </div>
   );
