@@ -61,10 +61,13 @@ function ProjectDetails(props) {
       <NavBar />
       {sendNotificationModalShown && (
         <div
-          className="modal show"
-          style={{ display: 'block', position: 'initial' }}
+          className="modal show modalJoinProject"
         >
-          <Modal.Dialog>
+          <Modal
+            className='modalJoinProject' 
+            show={sendNotificationModalShown} 
+            onHide={() => setSendNotificationModalShown(false)}
+            >
             <Modal.Header closeButton>
               <Modal.Title>Solicitar acceso al proyecto</Modal.Title>
             </Modal.Header>
@@ -89,7 +92,7 @@ function ProjectDetails(props) {
                 Sí, solicitar acceso
               </Button>
             </Modal.Footer>
-          </Modal.Dialog>
+          </Modal>
         </div>
       )}
       <div className="projectBanner d-flex flex-column">
